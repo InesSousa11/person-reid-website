@@ -1,75 +1,91 @@
 document.addEventListener("DOMContentLoaded", () => {
   const track = document.getElementById("heroCarousel");
-  if (!track) return;
+  const dotsWrap = document.getElementById("heroDots");
+  if (!track || !dotsWrap) return;
 
   const cards = Array.from(track.querySelectorAll(".hero-carousel-card"));
-  if (!cards.length) return;
+  const dots = Array.from(dotsWrap.querySelectorAll(".hero-dot"));
 
-  function updateActiveCard() {
-    const trackRect = track.getBoundingClientRect();
-    const trackCenter = trackRect.left + trackRect.width / 2;
+  let activeIndex = 0;
 
-    let closestCard = null;
-    let closestDistance = Infinity;
-    let secondClosestCard = null;
-    let secondClosestDistance = Infinity;
+  function applyClasses() {
+    const total = cards.length;
 
-    cards.forEach((card) => {
-      const rect = card.getBoundingClientRect();
-      const center = rect.left + rect.width / 2;
-      const distance = Math.abs(center - trackCenter);
+    cards.forEach((card, index) => {
+      card.classList.remove("is-active", "is-left", "is-right", "is-hidden-left", "is-hidden-right");
 
-      card.classList.remove("is-active", "is-near");
-
-      if (distance < closestDistance) {
-        secondClosestDistance = closestDistance;
-        secondClosestCard = closestCard;
-        closestDistance = distance;
-        closestCard = card;
-      } else if (distance < secondClosestDistance) {
-        secondClosestDistance = distance;
-        secondClosestCard = card;
+      if (index === activeIndex) {
+        card.classList.add("is-active");
+      } else if (index === (activeIndex - 1 + total) % total) {
+        card.classList.add("is-left");
+      } else if (index === (activeIndex + 1) % total) {
+        card.classList.add("is-right");
+      } else if (index < activeIndex) {
+        card.classList.add("is-hidden-left");
+      } else {
+        card.classList.add("is-hidden-right");
       }
     });
 
-    if (closestCard) {
-      closestCard.classList.add("is-active");
-    }
-
-    cards.forEach((card) => {
-      if (card === closestCard) return;
-
-      const rect = card.getBoundingClientRect();
-      const center = rect.left + rect.width / 2;
-      const distance = Math.abs(center - trackCenter);
-
-      if (distance < trackRect.width * 0.42) {
-        card.classList.add("is-near");
-      }
+    dots.forEach((dot, index) => {
+      dot.classList.toggle("is-active", index === activeIndex);
     });
   }
 
-  let ticking = false;
-
-  function onScrollUpdate() {
-    if (!ticking) {
-      window.requestAnimationFrame(() => {
-        updateActiveCard();
-        ticking = false;
-      });
-      ticking = true;
-    }
+  function goTo(index) {
+    activeIndex = (index + cards.length) % cards.length;
+    applyClasses();
   }
 
-  track.addEventListener("scroll", onScrollUpdate, { passive: true });
-  window.addEventListener("resize", updateActiveCard);
-
-  cards.forEach((card) => {
+  cards.forEach((card, index) => {
     card.addEventListener("click", () => {
-      const left = card.offsetLeft - (track.clientWidth / 2) + (card.clientWidth / 2);
-      track.scrollTo({ left, behavior: "smooth" });
+      goTo(index);
     });
   });
 
-  setTimeout(updateActiveCard, 100);
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+      goTo(index);
+    });
+  });
+
+  let startX = 0;
+  let endX = 0;
+
+  track.addEventListener("touchstart", (e) => {
+    startX = e.changedTouches[0].clientX;
+  }, { passive: true });
+
+  track.addEventListener("touchend", (e) => {
+    endX = e.changedTouches[0].clientX;
+    const dx = endX - startX;
+
+    if (Math.abs(dx) > 40) {
+      if (dx < 0) {
+        goTo(activeIndex + 1);
+      } else {
+        goTo(activeIndex - 1);
+      }
+    }
+  }, { passive: true });
+
+  let wheelLocked = false;
+  track.addEventListener("wheel", (e) => {
+    if (wheelLocked) return;
+    if (Math.abs(e.deltaY) < 8 && Math.abs(e.deltaX) < 8) return;
+
+    wheelLocked = true;
+
+    if (e.deltaY > 0 || e.deltaX > 0) {
+      goTo(activeIndex + 1);
+    } else {
+      goTo(activeIndex - 1);
+    }
+
+    setTimeout(() => {
+      wheelLocked = false;
+    }, 350);
+  }, { passive: true });
+
+  applyClasses();
 });

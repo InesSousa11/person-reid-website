@@ -57,28 +57,34 @@
 
         <div class="hero-name">Inês Sousa</div>
 
-        <div class="hero-carousel-wrap">
-          <div class="hero-carousel-viewport">
+        <div class="hero-stage">
+          <div class="hero-carousel-shell">
             <div class="hero-carousel-track" id="heroCarousel">
-              <div class="hero-carousel-card is-active">
+              <div class="hero-carousel-card is-active" data-index="0">
                 <video autoplay muted loop playsinline preload="auto" poster="./static/images/hero_fallback.jpg">
                   <source src="./static/videos/hero_background_web.mp4" type="video/mp4">
                   <source src="./static/videos/hero_background.mp4" type="video/mp4">
                 </video>
               </div>
 
-              <div class="hero-carousel-card">
+              <div class="hero-carousel-card" data-index="1">
                 <video autoplay muted loop playsinline preload="auto" poster="./static/images/hero_fallback.jpg">
                   <source src="./static/videos/comparison1_web.mp4" type="video/mp4">
                 </video>
               </div>
 
-              <div class="hero-carousel-card">
+              <div class="hero-carousel-card" data-index="2">
                 <video autoplay muted loop playsinline preload="auto" poster="./static/images/hero_fallback.jpg">
                   <source src="./static/videos/comparison2_web.mp4" type="video/mp4">
                 </video>
               </div>
             </div>
+          </div>
+
+          <div class="hero-dots" id="heroDots">
+            <button class="hero-dot is-active" data-index="0" aria-label="Go to slide 1"></button>
+            <button class="hero-dot" data-index="1" aria-label="Go to slide 2"></button>
+            <button class="hero-dot" data-index="2" aria-label="Go to slide 3"></button>
           </div>
         </div>
 
@@ -216,69 +222,6 @@
             </div>
             <h3 class="title is-4" style="margin-top: 1rem;">Multi-person interaction</h3>
             <p>Example showing identity preservation during close interaction between similar-looking people.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div style="margin-top: 2.6rem;">
-      <div class="section-card">
-        <div class="columns is-centered">
-          <div class="column is-12">
-            <h2 class="title is-3">Before and after comparison</h2>
-            <div class="inner-card content has-text-justified">
-              <p>
-                The strongest evidence of improvement comes from challenging cases where baseline tracking behavior becomes unstable. The examples below are intended to highlight situations involving occlusion, re-entry, and close interactions between similar-looking people, where identity consistency is critical.
-              </p>
-            </div>
-
-            <div class="columns comparison-grid">
-              <div class="column">
-                <div class="comparison-card content">
-                  <h3 class="title is-4">Baseline</h3>
-                  <div class="media-placeholder video small">
-                    <span>Baseline video placeholder — add a comparison clip here later.</span>
-                  </div>
-                  <p style="margin-top: 1rem;">
-                    Example baseline behavior in a challenging scenario, where identity may be lost or switched after ambiguity.
-                  </p>
-                </div>
-              </div>
-
-              <div class="column">
-                <div class="comparison-card content">
-                  <h3 class="title is-4">Proposed method</h3>
-                  <div class="media-placeholder video small">
-                    <span>Improved-method video placeholder — add your result clip here later.</span>
-                  </div>
-                  <p style="margin-top: 1rem;">
-                    Improved identity preservation through explicit recovery of the correct target after interruption or confusion.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div style="margin-top: 2.6rem;">
-      <div class="section-card">
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-10">
-            <h2 class="title is-3">Quantitative results</h2>
-            <div class="inner-card content has-text-justified">
-              <p>
-                Quantitative evaluation complements the qualitative analysis by measuring how well the system preserves identity under challenging conditions. This section can include metrics such as identity switches, reacquisition success, tracking consistency, or any other evaluation criteria most relevant to the thesis experiments.
-              </p>
-            </div>
-
-            <div style="margin-top: 1.8rem;">
-              <div class="media-placeholder">
-                <span>Quantitative results placeholder — add charts, tables, or summary figures here later.</span>
-              </div>
-            </div>
           </div>
         </div>
       </div>
