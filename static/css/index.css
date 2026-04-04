@@ -87,7 +87,7 @@ img, video { max-width: 100%; display: block; }
   z-index: 2;
   width: 100%;
   padding-top: 3rem;
-  padding-bottom: 2.6rem;
+  padding-bottom: 2.5rem;
 }
 
 .hero-clean {
@@ -110,53 +110,57 @@ img, video { max-width: 100%; display: block; }
   font-size: 0.98rem;
   font-weight: 700;
   color: var(--primary);
+  margin-bottom: 0.7rem;
+}
+
+/* Real scrollable centered carousel */
+.hero-carousel-section {
+  margin-top: 0.2rem;
   margin-bottom: 1rem;
 }
 
-/* Sketch-style hero carousel */
-.hero-stage {
+.hero-carousel-wrap {
   position: relative;
   width: 100%;
-  max-width: 1040px;
-  margin: 0.5rem auto 0 auto;
-}
-
-.hero-carousel-shell {
-  position: relative;
-  width: 100%;
-  height: 330px;
-  overflow: hidden;
 }
 
 .hero-carousel-track {
-  position: relative;
-  width: 100%;
-  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding:
+    0.9rem
+    clamp(80px, calc(50% - 260px), 360px)
+    1.1rem
+    clamp(80px, calc(50% - 260px), 360px);
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.hero-carousel-track::-webkit-scrollbar {
+  display: none;
 }
 
 .hero-carousel-card {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 32%;
-  min-width: 270px;
-  max-width: 360px;
-  border-radius: 24px;
+  flex: 0 0 520px;
+  width: 520px;
+  scroll-snap-align: center;
+  border-radius: 28px;
   overflow: hidden;
   background: rgba(255,255,255,0.7);
+  border: 1px solid rgba(255,255,255,0.72);
   box-shadow: var(--shadow-md);
-  border: 1px solid rgba(255,255,255,0.75);
-  transform: translate(-50%, -50%) scale(0.82);
-  opacity: 0.48;
+  opacity: 0.44;
   filter: blur(3px);
+  transform: scale(0.84);
   transition:
-    transform 0.45s ease,
-    left 0.45s ease,
-    opacity 0.45s ease,
-    filter 0.45s ease,
-    box-shadow 0.45s ease,
-    z-index 0.45s ease;
-  cursor: pointer;
+    transform 0.36s ease,
+    opacity 0.36s ease,
+    filter 0.36s ease,
+    box-shadow 0.36s ease;
 }
 
 .hero-carousel-card video {
@@ -165,45 +169,46 @@ img, video { max-width: 100%; display: block; }
   object-fit: cover;
 }
 
-.hero-carousel-card.is-left {
-  left: 23%;
-  transform: translate(-50%, -50%) scale(0.84);
-  opacity: 0.42;
-  filter: blur(3px);
-  z-index: 1;
-}
-
-.hero-carousel-card.is-right {
-  left: 77%;
-  transform: translate(-50%, -50%) scale(0.84);
-  opacity: 0.42;
-  filter: blur(3px);
-  z-index: 1;
+.hero-carousel-card.is-near {
+  opacity: 0.72;
+  filter: blur(1.5px);
+  transform: scale(0.92);
 }
 
 .hero-carousel-card.is-active {
-  left: 50%;
-  transform: translate(-50%, -50%) scale(1.14);
   opacity: 1;
   filter: blur(0);
-  z-index: 3;
+  transform: scale(1.08);
   box-shadow: var(--shadow-lg);
+  z-index: 3;
 }
 
-.hero-carousel-card.is-hidden-left {
-  left: 5%;
-  transform: translate(-50%, -50%) scale(0.7);
-  opacity: 0;
-  filter: blur(4px);
-  z-index: 0;
+.hero-carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.82);
+  box-shadow: var(--shadow-sm);
+  color: var(--text-main);
+  cursor: pointer;
+  z-index: 5;
+  transition: transform 0.18s ease, opacity 0.18s ease;
 }
 
-.hero-carousel-card.is-hidden-right {
-  left: 95%;
-  transform: translate(-50%, -50%) scale(0.7);
-  opacity: 0;
-  filter: blur(4px);
-  z-index: 0;
+.hero-carousel-arrow:hover {
+  transform: translateY(-50%) scale(1.04);
+}
+
+.hero-carousel-arrow-left {
+  left: 12px;
+}
+
+.hero-carousel-arrow-right {
+  right: 12px;
 }
 
 .hero-dots {
@@ -211,18 +216,18 @@ img, video { max-width: 100%; display: block; }
   justify-content: center;
   align-items: center;
   gap: 0.55rem;
-  margin-top: 0.5rem;
-  margin-bottom: 0.8rem;
+  margin-top: 0.15rem;
+  margin-bottom: 0.75rem;
 }
 
 .hero-dot {
-  width: 12px;
-  height: 12px;
+  width: 11px;
+  height: 11px;
   border-radius: 999px;
   border: none;
   background: rgba(130, 145, 190, 0.28);
   cursor: pointer;
-  transition: transform 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+  transition: transform 0.2s ease, background 0.2s ease;
 }
 
 .hero-dot.is-active {
@@ -492,21 +497,19 @@ pre {
   margin: 0 0.45rem;
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1200px) {
   .publication-title {
-    font-size: 3rem;
+    font-size: 3.1rem;
   }
 
-  .hero-stage {
-    max-width: 900px;
-  }
-
-  .hero-carousel-shell {
-    height: 290px;
+  .hero-carousel-track {
+    padding-left: max(40px, calc(50% - 220px));
+    padding-right: max(40px, calc(50% - 220px));
   }
 
   .hero-carousel-card {
-    min-width: 220px;
+    flex-basis: 440px;
+    width: 440px;
   }
 }
 
@@ -520,29 +523,24 @@ pre {
     padding-bottom: 2rem;
   }
 
-  .hero-stage {
-    max-width: 100%;
+  .hero-carousel-arrow {
+    display: none;
   }
 
-  .hero-carousel-shell {
-    height: 220px;
+  .hero-carousel-track {
+    gap: 0.6rem;
+    padding-left: max(18px, calc(50% - 135px));
+    padding-right: max(18px, calc(50% - 135px));
   }
 
   .hero-carousel-card {
-    width: 58%;
-    min-width: 180px;
-  }
-
-  .hero-carousel-card.is-left {
-    left: 18%;
-  }
-
-  .hero-carousel-card.is-right {
-    left: 82%;
+    flex: 0 0 270px;
+    width: 270px;
+    border-radius: 22px;
   }
 
   .hero-carousel-card.is-active {
-    transform: translate(-50%, -50%) scale(1.04);
+    transform: scale(1.03);
   }
 
   .section {

@@ -9,7 +9,6 @@
   <title>Robust Multi-Person Re-Identification and Tracking for Social Robotics</title>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
-
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
@@ -37,9 +36,7 @@
   </div>
   <div class="navbar-menu">
     <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href="#top">
-        <span class="icon"><i class="fas fa-home"></i></span>
-      </a>
+      <a class="navbar-item" href="#top"><span class="icon"><i class="fas fa-home"></i></span></a>
       <a class="navbar-item" href="#overview">Overview</a>
       <a class="navbar-item" href="#method">Method</a>
       <a class="navbar-item" href="#results">Results</a>
@@ -54,38 +51,41 @@
     <div class="container is-max-desktop">
       <div class="hero-clean">
         <h1 class="title is-1 publication-title">Robust Multi-Person Re-Identification and Tracking for Social Robotics</h1>
-
         <div class="hero-name">Inês Sousa</div>
 
-        <div class="hero-stage">
-          <div class="hero-carousel-shell">
+        <div class="hero-carousel-section">
+          <div class="hero-carousel-wrap">
+            <button class="hero-carousel-arrow hero-carousel-arrow-left" id="heroPrev" aria-label="Previous teaser">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+
             <div class="hero-carousel-track" id="heroCarousel">
-              <div class="hero-carousel-card is-active" data-index="0">
+              <article class="hero-carousel-card">
                 <video autoplay muted loop playsinline preload="auto" poster="./static/images/hero_fallback.jpg">
                   <source src="./static/videos/hero_background_web.mp4" type="video/mp4">
                   <source src="./static/videos/hero_background.mp4" type="video/mp4">
                 </video>
-              </div>
+              </article>
 
-              <div class="hero-carousel-card" data-index="1">
+              <article class="hero-carousel-card">
                 <video autoplay muted loop playsinline preload="auto" poster="./static/images/hero_fallback.jpg">
                   <source src="./static/videos/comparison1_web.mp4" type="video/mp4">
                 </video>
-              </div>
+              </article>
 
-              <div class="hero-carousel-card" data-index="2">
+              <article class="hero-carousel-card">
                 <video autoplay muted loop playsinline preload="auto" poster="./static/images/hero_fallback.jpg">
                   <source src="./static/videos/comparison2_web.mp4" type="video/mp4">
                 </video>
-              </div>
+              </article>
             </div>
+
+            <button class="hero-carousel-arrow hero-carousel-arrow-right" id="heroNext" aria-label="Next teaser">
+              <i class="fas fa-chevron-right"></i>
+            </button>
           </div>
 
-          <div class="hero-dots" id="heroDots">
-            <button class="hero-dot is-active" data-index="0" aria-label="Go to slide 1"></button>
-            <button class="hero-dot" data-index="1" aria-label="Go to slide 2"></button>
-            <button class="hero-dot" data-index="2" aria-label="Go to slide 3"></button>
-          </div>
+          <div class="hero-dots" id="heroDots"></div>
         </div>
 
         <div class="publication-links hero-links-bottom">
@@ -95,14 +95,12 @@
               <span>Thesis</span>
             </a>
           </span>
-
           <span class="link-block">
             <a href="#" class="external-link button is-normal is-rounded is-dark">
               <span class="icon"><i class="fab fa-github"></i></span>
               <span>Code</span>
             </a>
           </span>
-
           <span class="link-block">
             <a href="#demo" class="external-link button is-normal is-rounded is-dark">
               <span class="icon"><i class="fas fa-play-circle"></i></span>

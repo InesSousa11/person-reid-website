@@ -1,78 +1,143 @@
-window.HELP_IMPROVE_VIDEOJS = false;
+document.addEventListener("DOMContentLoaded", () => {
+  const track = document.getElementById("heroCarousel");
+  const prevBtn = document.getElementById("heroPrev");
+  const nextBtn = document.getElementById("heroNext");
+  const dotsWrap = document.getElementById("heroDots");
 
-var INTERP_BASE = "./static/interpolation/stacked";
-var NUM_INTERP_FRAMES = 240;
+  if (!track) return;
 
-var interp_images = [];
-function preloadInterpolationImages() {
-  for (var i = 0; i < NUM_INTERP_FRAMES; i++) {
-    var path = INTERP_BASE + '/' + String(i).padStart(6, '0') + '.jpg';
-    interp_images[i] = new Image();
-    interp_images[i].src = path;
+  const cards = Array.from(track.querySelectorAll(".hero-carousel-card"));
+  if (!cards.length) return;
+
+  let activeIndex = 0;
+  let ticking = false;
+
+  function buildDots() {
+    if (!dotsWrap) return;
+    dotsWrap.innerHTML = "";
+    cards.forEach((_, index) => {
+      const dot = document.createElement("button");
+      dot.className = "hero-dot";
+      dot.setAttribute("aria-label", `Go to teaser ${index + 1}`);
+      dot.dataset.index = index;
+      dot.addEventListener("click", () => centerCard(index, true));
+      dotsWrap.appendChild(dot);
+    });
   }
-}
 
-function setInterpolationImage(i) {
-  var image = interp_images[i];
-  image.ondragstart = function() { return false; };
-  image.oncontextmenu = function() { return false; };
-  $('#interpolation-image-wrapper').empty().append(image);
-}
+  function updateDots() {
+    if (!dotsWrap) return;
+    const dots = Array.from(dotsWrap.querySelectorAll(".hero-dot"));
+    dots.forEach((dot, index) => {
+      dot.classList.toggle("is-active", index === activeIndex);
+    });
+  }
 
+  function getTrackCenter() {
+    const rect = track.getBoundingClientRect();
+    return rect.left + rect.width / 2;
+  }
 
-$(document).ready(function() {
-    // Check for click events on the navbar burger icon
-    $(".navbar-burger").click(function() {
-      // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-      $(".navbar-burger").toggleClass("is-active");
-      $(".navbar-menu").toggleClass("is-active");
+  function updateActiveCard() {
+    const centerX = getTrackCenter();
+    let closestIndex = 0;
+    let closestDistance = Infinity;
 
+    cards.forEach((card, index) => {
+      const rect = card.getBoundingClientRect();
+      const cardCenter = rect.left + rect.width / 2;
+      const distance = Math.abs(cardCenter - centerX);
+
+      card.classList.remove("is-active", "is-near");
+
+      if (distance < closestDistance) {
+        closestDistance = distance;
+        closestIndex = index;
+      }
     });
 
-    var options = {
-			slidesToScroll: 1,
-			slidesToShow: 3,
-			loop: true,
-			infinite: true,
-			autoplay: false,
-			autoplaySpeed: 3000,
-    }
+    activeIndex = closestIndex;
 
-		// Initialize all div with carousel class
-    var carousels = bulmaCarousel.attach('.carousel', options);
-
-    // Loop on each carousel initialized
-    for(var i = 0; i < carousels.length; i++) {
-    	// Add listener to  event
-    	carousels[i].on('before:show', state => {
-    		console.log(state);
-    	});
-    }
-
-    // Access to bulmaCarousel instance of an element
-    var element = document.querySelector('#my-element');
-    if (element && element.bulmaCarousel) {
-    	// bulmaCarousel instance is available as element.bulmaCarousel
-    	element.bulmaCarousel.on('before-show', function(state) {
-    		console.log(state);
-    	});
-    }
-
-    /*var player = document.getElementById('interpolation-video');
-    player.addEventListener('loadedmetadata', function() {
-      $('#interpolation-slider').on('input', function(event) {
-        console.log(this.value, player.duration);
-        player.currentTime = player.duration / 100 * this.value;
-      })
-    }, false);*/
-    preloadInterpolationImages();
-
-    $('#interpolation-slider').on('input', function(event) {
-      setInterpolationImage(this.value);
+    cards.forEach((card, index) => {
+      if (index === activeIndex) {
+        card.classList.add("is-active");
+      } else if (Math.abs(index - activeIndex) === 1) {
+        card.classList.add("is-near");
+      }
     });
-    setInterpolationImage(0);
-    $('#interpolation-slider').prop('max', NUM_INTERP_FRAMES - 1);
 
-    bulmaSlider.attach();
+    updateDots();
+  }
 
-})
+  function centerCard(index, smooth = true) {
+    const card = cards[index];
+    if (!card) return;
+
+    const targetLeft =
+      card.offsetLeft - (track.clientWidth / 2) + (card.clientWidth / 2);
+
+    track.scrollTo({
+      left: targetLeft,
+      behavior: smooth ? "smooth" : "auto",
+    });
+  }
+
+  function handleScroll() {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        updateActiveCard();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }
+
+  buildDots();
+
+  cards.forEach((card, index) => {
+    card.addEventListener("click", () => centerCard(index, true));
+  });
+
+  if (prevBtn) {
+    prevBtn.addEventListener("click", () => {
+      centerCard(Math.max(0, activeIndex - 1), true);
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener("click", () => {
+      centerCard(Math.min(cards.length - 1, activeIndex + 1), true);
+    });
+  }
+
+  track.addEventListener("scroll", handleScroll, { passive: true });
+  window.addEventListener("resize", () => {
+    updateActiveCard();
+    centerCard(activeIndex, false);
+  });
+
+  let startX = 0;
+  let endX = 0;
+
+  track.addEventListener("touchstart", (e) => {
+    startX = e.changedTouches[0].clientX;
+  }, { passive: true });
+
+  track.addEventListener("touchend", (e) => {
+    endX = e.changedTouches[0].clientX;
+    const dx = endX - startX;
+
+    if (Math.abs(dx) > 40) {
+      if (dx < 0) {
+        centerCard(Math.min(cards.length - 1, activeIndex + 1), true);
+      } else {
+        centerCard(Math.max(0, activeIndex - 1), true);
+      }
+    }
+  }, { passive: true });
+
+  setTimeout(() => {
+    centerCard(0, false);
+    updateActiveCard();
+  }, 80);
+});
