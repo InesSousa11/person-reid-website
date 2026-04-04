@@ -141,9 +141,9 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline controls height="100%">
-        <source src="./static/videos/teaser.mp4" type="video/mp4">
-      </video>
+      <div class="media-placeholder video">
+        <span>Teaser placeholder — add a strong short demo video here later to immediately show identity-preserving tracking in action.</span>
+      </div>
       <h2 class="subtitle has-text-centered">
         A visual tracking system designed to preserve identity through occlusions, re-entry, and complex multi-person interactions in social robotics.
       </h2>
@@ -153,16 +153,18 @@
 
 <section class="section" id="overview">
   <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Why this matters</h2>
-        <div class="content has-text-justified">
-          <p>
-            In social robotics, tracking a person is not only about following motion. A robot must preserve each person’s identity over time, even when people become occluded, leave the field of view, or reappear later in a different position or pose. This becomes especially difficult in multi-person environments where nearby individuals may look similar and interactions are dynamic.
-          </p>
-          <p>
-            Standard tracking pipelines often work well while the target remains continuously visible, but they can fail when identity must be recovered after ambiguity or disappearance. In a real robot, these failures can lead to identity switches, lost targets, and unstable behavior. This work focuses on making identity consistency more robust for long-term person-aware interaction.
-          </p>
+    <div class="section-card">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-10">
+          <h2 class="title is-3">Why this matters</h2>
+          <div class="inner-card content has-text-justified">
+            <p>
+              In social robotics, tracking a person is not only about following motion. A robot must preserve each person’s identity over time, even when people become occluded, leave the field of view, or reappear later in a different position or pose. This becomes especially difficult in multi-person environments where nearby individuals may look similar and interactions are dynamic.
+            </p>
+            <p>
+              Standard tracking pipelines often work well while the target remains continuously visible, but they can fail when identity must be recovered after ambiguity or disappearance. In a real robot, these failures can lead to identity switches, lost targets, and unstable behavior. This work focuses on making identity consistency more robust for long-term person-aware interaction.
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -171,20 +173,25 @@
 
 <section class="section" id="method">
   <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Method overview</h2>
-        <div class="content has-text-justified">
-          <p>
-            This thesis adapts a memory-based visual tracking architecture into a real-time multi-person re-identification and tracking system for social robotics. The objective is not only to segment and track people frame by frame, but also to preserve identity consistently across interruptions, occlusions, close interactions, and reappearance events.
-          </p>
-          <p>
-            The resulting system combines visual tracking, memory, and identity-aware reasoning to reduce identity switches and improve robustness in realistic robotic scenarios.
-          </p>
+    <div class="section-card">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-10">
+          <h2 class="title is-3">Method overview</h2>
+          <div class="inner-card content has-text-justified">
+            <p>
+              This thesis adapts a memory-based visual tracking architecture into a real-time multi-person re-identification and tracking system for social robotics. The objective is not only to segment and track people frame by frame, but also to preserve identity consistently across interruptions, occlusions, close interactions, and reappearance events.
+            </p>
+            <p>
+              The resulting system combines visual tracking, memory, and identity-aware reasoning to reduce identity switches and improve robustness in realistic robotic scenarios.
+            </p>
+          </div>
+
+          <div style="margin-top: 1.6rem;">
+            <div class="media-placeholder">
+              <span>Architecture figure placeholder — add your system diagram here later.</span>
+            </div>
+          </div>
         </div>
-        <img src="./static/images/architecture_overview.png"
-             alt="Architecture overview"
-             style="width: 100%; max-width: 900px; border-radius: 12px; margin-top: 1rem;">
       </div>
     </div>
   </div>
@@ -194,7 +201,7 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column">
-        <div class="content">
+        <div class="mode-card content">
           <h2 class="title is-3">Normal tracking mode</h2>
           <p>
             When the target is confidently tracked, the system remains in normal tracking mode. In this mode, identity is maintained using recent visual evidence and temporal memory, enabling efficient and stable online tracking during continuous observation.
@@ -206,7 +213,7 @@
       </div>
 
       <div class="column">
-        <div class="content">
+        <div class="mode-card accent content">
           <h2 class="title is-3">Reacquisition mode</h2>
           <p>
             When confidence drops due to occlusion, disappearance, or ambiguity, the system switches to reacquisition mode. In this stage, candidate detections are evaluated to recover the correct identity before returning to normal tracking.
@@ -222,37 +229,90 @@
 
 <section class="hero is-light is-small" id="results">
   <div class="hero-body">
-    <div class="container">
+    <div class="container is-max-desktop">
       <h2 class="title is-3 has-text-centered" style="margin-bottom: 2rem;">Qualitative results</h2>
-      <div id="results-carousel" class="carousel results-carousel">
 
-        <div class="item item-1">
-          <video poster="" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/comparison1.mp4" type="video/mp4">
-          </video>
-          <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
-            Occlusion handling and identity recovery.
-          </h2>
+      <div class="columns is-multiline">
+        <div class="column is-4">
+          <div class="comparison-card content">
+            <div class="media-placeholder video small">
+              <span>Occlusion handling placeholder — add a result clip here later.</span>
+            </div>
+            <h3 class="title is-4" style="margin-top: 1rem;">Occlusion handling</h3>
+            <p>
+              Example showing recovery of the correct identity after partial or full occlusion.
+            </p>
+          </div>
         </div>
 
-        <div class="item item-2">
-          <video poster="" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/comparison2.mp4" type="video/mp4">
-          </video>
-          <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
-            Reacquisition after temporary disappearance.
-          </h2>
+        <div class="column is-4">
+          <div class="comparison-card content">
+            <div class="media-placeholder video small">
+              <span>Re-entry placeholder — add a result clip here later.</span>
+            </div>
+            <h3 class="title is-4" style="margin-top: 1rem;">Re-entry and reacquisition</h3>
+            <p>
+              Example showing successful reacquisition after the person temporarily leaves the field of view.
+            </p>
+          </div>
         </div>
 
-        <div class="item item-3">
-          <video poster="" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/comparison3.mp4" type="video/mp4">
-          </video>
-          <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
-            Identity preservation in multi-person interaction.
-          </h2>
+        <div class="column is-4">
+          <div class="comparison-card content">
+            <div class="media-placeholder video small">
+              <span>Multi-person interaction placeholder — add a result clip here later.</span>
+            </div>
+            <h3 class="title is-4" style="margin-top: 1rem;">Multi-person interaction</h3>
+            <p>
+              Example showing identity preservation during close interaction between similar-looking people.
+            </p>
+          </div>
         </div>
+      </div>
 
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="section-card">
+      <div class="columns is-centered">
+        <div class="column is-12">
+          <h2 class="title is-3">Before and after comparison</h2>
+          <div class="inner-card content has-text-justified">
+            <p>
+              The strongest evidence of improvement comes from challenging cases where baseline tracking behavior becomes unstable. The examples below are intended to highlight situations involving occlusion, re-entry, and close interactions between similar-looking people, where identity consistency is critical.
+            </p>
+          </div>
+
+          <div class="columns comparison-grid">
+            <div class="column">
+              <div class="comparison-card content">
+                <h3 class="title is-4">Baseline</h3>
+                <div class="media-placeholder video small">
+                  <span>Baseline video placeholder — add a comparison clip here later.</span>
+                </div>
+                <p style="margin-top: 1rem;">
+                  Example baseline behavior in a challenging scenario, where identity may be lost or switched after ambiguity.
+                </p>
+              </div>
+            </div>
+
+            <div class="column">
+              <div class="comparison-card content">
+                <h3 class="title is-4">Proposed method</h3>
+                <div class="media-placeholder video small">
+                  <span>Improved-method video placeholder — add your result clip here later.</span>
+                </div>
+                <p style="margin-top: 1rem;">
+                  Improved identity preservation through explicit recovery of the correct target after interruption or confusion.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
   </div>
@@ -260,59 +320,22 @@
 
 <section class="section">
   <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Before and after comparison</h2>
-        <div class="content has-text-justified">
-          <p>
-            The strongest evidence of improvement comes from challenging cases where baseline tracking behavior becomes unstable. The examples below are intended to highlight situations involving occlusion, re-entry, and close interactions between similar-looking people, where identity consistency is critical.
-          </p>
-        </div>
-
-        <div class="columns is-centered">
-          <div class="column">
-            <div class="content">
-              <h3 class="title is-4">Baseline</h3>
-              <video autoplay controls muted loop playsinline height="100%">
-                <source src="./static/videos/baseline.mp4" type="video/mp4">
-              </video>
-              <p>
-                Example baseline behavior in a challenging scenario, where identity may be lost or switched after ambiguity.
-              </p>
-            </div>
+    <div class="section-card">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-10">
+          <h2 class="title is-3">Quantitative results</h2>
+          <div class="inner-card content has-text-justified">
+            <p>
+              Quantitative evaluation complements the qualitative analysis by measuring how well the system preserves identity under challenging conditions. This section can include metrics such as identity switches, reacquisition success, tracking consistency, or any other evaluation criteria most relevant to the thesis experiments.
+            </p>
           </div>
 
-          <div class="column">
-            <div class="content">
-              <h3 class="title is-4">Proposed method</h3>
-              <video autoplay controls muted loop playsinline height="100%">
-                <source src="./static/videos/proposed_method.mp4" type="video/mp4">
-              </video>
-              <p>
-                Improved identity preservation through explicit recovery of the correct target after interruption or confusion.
-              </p>
+          <div style="margin-top: 1.6rem;">
+            <div class="media-placeholder">
+              <span>Quantitative results placeholder — add charts, tables, or summary figures here later.</span>
             </div>
           </div>
         </div>
-
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Quantitative results</h2>
-        <div class="content has-text-justified">
-          <p>
-            Quantitative evaluation complements the qualitative analysis by measuring how well the system preserves identity under challenging conditions. This section can include metrics such as identity switches, reacquisition success, tracking consistency, or any other evaluation criteria most relevant to the thesis experiments.
-          </p>
-        </div>
-        <img src="./static/images/quant_results.png"
-             alt="Quantitative results"
-             style="width: 100%; max-width: 850px; border-radius: 12px; margin-top: 1rem;">
       </div>
     </div>
   </div>
@@ -320,22 +343,24 @@
 
 <section class="section" id="demo">
   <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Interactive demo</h2>
-        <div class="content has-text-justified">
-          <p>
-            An interactive demo will be added here to allow users to explore selected tracking examples and compare outputs. The long-term goal is to provide a simple interface where users can inspect difficult scenarios and better understand the system’s behavior.
-          </p>
-          <p>
-            This section can later be connected to an external hosted demo, such as a Hugging Face Space, and embedded directly into this webpage.
-          </p>
-        </div>
+    <div class="section-card">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-10">
+          <h2 class="title is-3">Interactive demo</h2>
+          <div class="inner-card content has-text-justified">
+            <p>
+              An interactive demo will be added here to allow users to explore selected tracking examples and compare outputs. The long-term goal is to provide a simple interface where users can inspect difficult scenarios and better understand the system’s behavior.
+            </p>
+            <p>
+              This section can later be connected to an external hosted demo, such as a Hugging Face Space, and embedded directly into this webpage.
+            </p>
+          </div>
 
-        <div class="box" style="margin-top: 1.5rem;">
-          <p class="has-text-centered">
-            An interactive demo will be added here soon, allowing users to explore selected examples and compare the system’s behavior across challenging scenarios.
-          </p>
+          <div class="box" style="margin-top: 1.6rem;">
+            <p class="has-text-centered">
+              An interactive demo will be added here soon, allowing users to explore selected examples and compare the system’s behavior across challenging scenarios.
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -344,45 +369,48 @@
 
 <section class="section" id="resources">
   <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Resources</h2>
+    <div class="section-card">
+      <div class="columns is-centered">
+        <div class="column is-12">
+          <h2 class="title is-3">Resources</h2>
 
-        <div class="content has-text-justified">
-          <p>
-            Useful links related to this project.
-          </p>
+          <div class="resource-panel content has-text-justified">
+            <p>
+              Useful links related to this project.
+            </p>
+          </div>
+
+          <div class="columns is-multiline resource-buttons">
+            <div class="column is-half">
+              <a href="#" class="button is-fullwidth is-dark is-rounded">Thesis PDF</a>
+            </div>
+            <div class="column is-half">
+              <a href="#" class="button is-fullwidth is-dark is-rounded">Code Repository</a>
+            </div>
+            <div class="column is-half">
+              <a href="#" class="button is-fullwidth is-dark is-rounded">Project Demo</a>
+            </div>
+            <div class="column is-half">
+              <a href="#" class="button is-fullwidth is-dark is-rounded">SocRob / Team Website</a>
+            </div>
+          </div>
         </div>
-
-        <div class="columns is-multiline">
-          <div class="column is-half">
-            <a href="#" class="button is-fullwidth is-dark is-rounded">Thesis PDF</a>
-          </div>
-          <div class="column is-half">
-            <a href="#" class="button is-fullwidth is-dark is-rounded">Code Repository</a>
-          </div>
-          <div class="column is-half">
-            <a href="#" class="button is-fullwidth is-dark is-rounded">Project Demo</a>
-          </div>
-          <div class="column is-half">
-            <a href="#" class="button is-fullwidth is-dark is-rounded">SocRob / Team Website</a>
-          </div>
-        </div>
-
       </div>
     </div>
   </div>
 </section>
 
 <section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title">Citation</h2>
-    <pre><code>@mastersthesis{sousa2026reidtracking,
+  <div class="container is-max-desktop">
+    <div class="section-card">
+      <h2 class="title is-3">Citation</h2>
+      <pre><code>@mastersthesis{sousa2026reidtracking,
   author = {Inês Sousa},
   title  = {Robust Multi-Person Re-Identification and Tracking for Social Robotics},
   school = {Instituto Superior Técnico},
   year   = {2026}
 }</code></pre>
+    </div>
   </div>
 </section>
 
