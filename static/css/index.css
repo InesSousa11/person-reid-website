@@ -87,8 +87,8 @@ img, video { max-width: 100%; display: block; }
   position: relative;
   z-index: 2;
   width: 100%;
-  padding-top: 2.6rem;
-  padding-bottom: 1.7rem;
+  padding-top: 2.8rem;
+  padding-bottom: 2.8rem;
 }
 
 .hero-clean {
@@ -103,7 +103,7 @@ img, video { max-width: 100%; display: block; }
   font-weight: 800;
   color: var(--text-main);
   max-width: 960px;
-  margin: 0 auto 0.8rem auto;
+  margin: 0 auto 1.15rem auto;
   letter-spacing: 0;
 }
 
@@ -112,7 +112,7 @@ img, video { max-width: 100%; display: block; }
   font-size: 1rem;
   font-weight: 700;
   color: var(--primary);
-  margin-bottom: 0.55rem;
+  margin-bottom: 1.2rem;
   padding: 0.05rem 0.22rem;
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.28);
@@ -120,8 +120,8 @@ img, video { max-width: 100%; display: block; }
 
 /* Hero carousel */
 .hero-carousel-section {
-  margin-top: 0.05rem;
-  margin-bottom: 0.45rem;
+  margin-top: 0.2rem;
+  margin-bottom: 1.3rem;
 }
 
 .hero-carousel-wrap {
@@ -139,9 +139,9 @@ img, video { max-width: 100%; display: block; }
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   padding:
-    0.8rem
+    1.15rem
     max(28px, calc(50% - 190px))
-    0.8rem
+    1.4rem
     max(28px, calc(50% - 190px));
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -221,8 +221,8 @@ img, video { max-width: 100%; display: block; }
   justify-content: center;
   align-items: center;
   gap: 0.52rem;
-  margin-top: 0.12rem;
-  margin-bottom: 0.65rem;
+  margin-top: 0.25rem;
+  margin-bottom: 1.2rem;
 }
 
 .hero-dot {
@@ -243,7 +243,7 @@ img, video { max-width: 100%; display: block; }
 /* Subtle buttons */
 .hero-links-bottom {
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 1.2rem;
 }
 
 .link-block {
@@ -544,7 +544,7 @@ pre {
 
   .hero-body {
     padding-top: 2.4rem;
-    padding-bottom: 1.6rem;
+    padding-bottom: 2.2rem;
   }
 
   .hero-carousel-arrow {
@@ -557,8 +557,8 @@ pre {
 
   .hero-carousel-track {
     gap: 0.35rem;
-    padding-top: 0.45rem;
-    padding-bottom: 0.55rem;
+    padding-top: 0.7rem;
+    padding-bottom: 0.8rem;
     padding-left: max(12px, calc(50% - 118px));
     padding-right: max(12px, calc(50% - 118px));
   }
@@ -575,7 +575,11 @@ pre {
   }
 
   .hero-dots {
-    margin-bottom: 0.45rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .hero-links-bottom {
+    margin-bottom: 0.5rem;
   }
 
   .section {
