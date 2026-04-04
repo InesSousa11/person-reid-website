@@ -1,17 +1,17 @@
 :root {
-  --bg-page: #f2f5fb;
-  --bg-hero: #f3f6fb;
-  --bg-band-a: #eef3fb;
-  --bg-band-b: #f8faff;
-  --bg-band-c: #f1f5fc;
+  --bg-page: #f1f5fb;
+  --bg-hero: #eef4fc;
+  --bg-band-a: #edf3ff;
+  --bg-band-b: #f8fbff;
+  --bg-band-c: #f1f6fd;
 
   --line: rgba(24, 34, 77, 0.08);
   --text-main: #1d2553;
-  --text-soft: #67759c;
+  --text-soft: #66759c;
 
   --primary: #6672ff;
   --primary-strong: #5662f0;
-  --secondary: #78bcff;
+  --secondary: #79bdff;
 
   --shadow-sm: 0 10px 24px rgba(48, 64, 140, 0.08);
   --shadow-md: 0 18px 42px rgba(48, 64, 140, 0.12);
@@ -32,12 +32,11 @@ html {
 body {
   font-family: "Google Sans", "Noto Sans", sans-serif;
   background:
-    radial-gradient(circle at 0% 0%, rgba(152, 203, 255, 0.14), transparent 24%),
-    radial-gradient(circle at 100% 0%, rgba(231, 204, 255, 0.16), transparent 22%),
+    radial-gradient(circle at 0% 0%, rgba(126, 190, 255, 0.16), transparent 22%),
+    radial-gradient(circle at 100% 0%, rgba(220, 186, 255, 0.18), transparent 20%),
     linear-gradient(180deg, #fbfcff 0%, var(--bg-page) 100%);
   color: var(--text-main);
   line-height: 1.72;
-  scroll-snap-type: y proximity;
 }
 
 a {
@@ -78,26 +77,18 @@ video {
   color: var(--primary) !important;
 }
 
-/* FULL PANELS */
-.full-panel {
-  min-height: calc(100vh - var(--nav-h));
-  display: flex;
-  align-items: center;
-  scroll-snap-align: start;
-}
-
-#top.hero-panel {
-  min-height: calc(100vh - var(--nav-h));
-}
-
-/* HERO */
+/* HERO - ONLY HERO VISIBLE */
 .hero#top {
   position: relative;
   overflow: hidden;
+  min-height: calc(100vh - var(--nav-h));
+  display: flex;
+  align-items: center;
   background:
-    radial-gradient(circle at 10% 22%, rgba(160, 212, 255, 0.30), transparent 24%),
-    radial-gradient(circle at 88% 16%, rgba(233, 202, 255, 0.26), transparent 24%),
-    linear-gradient(180deg, #f3f6fb 0%, #edf2f9 100%);
+    radial-gradient(circle at 8% 24%, rgba(124, 195, 255, 0.34), transparent 24%),
+    radial-gradient(circle at 92% 14%, rgba(223, 189, 255, 0.30), transparent 22%),
+    radial-gradient(circle at 50% 100%, rgba(173, 214, 255, 0.12), transparent 22%),
+    linear-gradient(180deg, #eef4fc 0%, #ecf1fa 100%);
 }
 
 .hero#top::before {
@@ -105,7 +96,7 @@ video {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(190, 221, 255, 0.10) 0%, transparent 22%, transparent 78%, rgba(239, 217, 255, 0.10) 100%);
+    linear-gradient(90deg, rgba(182, 220, 255, 0.12) 0%, transparent 22%, transparent 78%, rgba(235, 208, 255, 0.12) 100%);
   pointer-events: none;
 }
 
@@ -113,8 +104,8 @@ video {
   position: relative;
   z-index: 2;
   width: 100%;
-  padding-top: 2.6rem;
-  padding-bottom: 2.6rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .hero-clean {
@@ -155,7 +146,7 @@ video {
 
 .hero-links-bottom {
   margin-top: 0;
-  margin-bottom: 2.6rem;
+  margin-bottom: 2.4rem;
 }
 
 .link-block {
@@ -189,8 +180,8 @@ video {
   align-items: center;
   gap: 0.55rem;
   text-decoration: none;
-  color: var(--text-soft);
-  margin-top: 0.4rem;
+  color: var(--primary-strong);
+  margin-top: 0.2rem;
 }
 
 .scroll-cue:hover {
@@ -204,8 +195,8 @@ video {
 }
 
 .scroll-cue-chevron {
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   border-right: 2px solid currentColor;
   border-bottom: 2px solid currentColor;
   transform: rotate(45deg);
@@ -217,11 +208,14 @@ video {
   50% { transform: rotate(45deg) translate(4px, 4px); opacity: 1; }
 }
 
-/* TEASER PANEL */
+/* SECOND PANEL */
 .teaser-panel-section {
+  min-height: calc(100vh - var(--nav-h));
+  display: flex;
+  align-items: center;
   background:
-    radial-gradient(circle at 12% 12%, rgba(173, 214, 255, 0.18), transparent 22%),
-    radial-gradient(circle at 88% 18%, rgba(232, 207, 255, 0.18), transparent 22%),
+    radial-gradient(circle at 12% 12%, rgba(160, 212, 255, 0.18), transparent 20%),
+    radial-gradient(circle at 88% 18%, rgba(223, 189, 255, 0.18), transparent 20%),
     linear-gradient(180deg, #edf2f9 0%, #eef3fa 100%);
 }
 
@@ -237,7 +231,7 @@ video {
   padding: 3.2rem 2rem;
   border: 1px dashed rgba(102, 114, 255, 0.18);
   background:
-    linear-gradient(135deg, rgba(185, 205, 255, 0.16), rgba(240, 220, 255, 0.14)),
+    linear-gradient(135deg, rgba(185, 205, 255, 0.18), rgba(240, 220, 255, 0.16)),
     rgba(255,255,255,0.42);
   box-shadow: var(--shadow-md);
 }
