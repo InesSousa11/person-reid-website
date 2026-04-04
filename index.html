@@ -9,7 +9,6 @@
   <title>Robust Multi-Person Re-Identification and Tracking for Social Robotics</title>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
-
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
@@ -38,9 +37,7 @@
   <div class="navbar-menu">
     <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
       <a class="navbar-item" href="#top">
-        <span class="icon">
-          <i class="fas fa-home"></i>
-        </span>
+        <span class="icon"><i class="fas fa-home"></i></span>
       </a>
       <a class="navbar-item" href="#overview">Overview</a>
       <a class="navbar-item" href="#method">Method</a>
@@ -51,7 +48,8 @@
   </div>
 </nav>
 
-<section class="hero" id="top">
+<!-- HERO PANEL -->
+<section class="hero hero-panel" id="top">
   <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="hero-clean">
@@ -74,9 +72,7 @@
           <span class="link-block">
             <a href="#"
                class="external-link button is-normal is-rounded is-dark">
-              <span class="icon">
-                <i class="fas fa-file-pdf"></i>
-              </span>
+              <span class="icon"><i class="fas fa-file-pdf"></i></span>
               <span>Thesis</span>
             </a>
           </span>
@@ -84,9 +80,7 @@
           <span class="link-block">
             <a href="#"
                class="external-link button is-normal is-rounded is-dark">
-              <span class="icon">
-                <i class="fab fa-github"></i>
-              </span>
+              <span class="icon"><i class="fab fa-github"></i></span>
               <span>Code</span>
             </a>
           </span>
@@ -94,9 +88,7 @@
           <span class="link-block">
             <a href="#demo"
                class="external-link button is-normal is-rounded is-dark">
-              <span class="icon">
-                <i class="fas fa-play-circle"></i>
-              </span>
+              <span class="icon"><i class="fas fa-play-circle"></i></span>
               <span>Demo</span>
             </a>
           </span>
@@ -104,9 +96,7 @@
           <span class="link-block">
             <a href="#resources"
                class="external-link button is-normal is-rounded is-dark">
-              <span class="icon">
-                <i class="fas fa-link"></i>
-              </span>
+              <span class="icon"><i class="fas fa-link"></i></span>
               <span>Resources</span>
             </a>
           </span>
@@ -114,35 +104,46 @@
           <span class="link-block">
             <a href="#"
                class="external-link button is-normal is-rounded is-dark">
-              <span class="icon">
-                <i class="fas fa-users"></i>
-              </span>
+              <span class="icon"><i class="fas fa-users"></i></span>
               <span>Team</span>
             </a>
           </span>
         </div>
 
-        <div class="hero-teaser-box">
-          <div class="hero-teaser-inner">
-            <div class="hero-teaser-play">
-              <i class="fas fa-play"></i>
-            </div>
-            <div class="hero-teaser-text">
-              Teaser placeholder — add a strong short demo video here later to immediately show identity-preserving tracking in action.
-            </div>
-          </div>
-        </div>
-
-        <p class="hero-teaser-caption">
-          A visual tracking system designed to preserve identity through occlusions, re-entry, and complex multi-person interactions in social robotics.
-        </p>
+        <a href="#teaser-panel" class="scroll-cue" aria-label="Scroll to see the project">
+          <span class="scroll-cue-text">SCROLL</span>
+          <span class="scroll-cue-chevron"></span>
+        </a>
 
       </div>
     </div>
   </div>
 </section>
 
-<section class="section section-band" id="overview">
+<!-- TEASER PANEL -->
+<section class="section full-panel teaser-panel-section" id="teaser-panel">
+  <div class="container is-max-desktop">
+    <div class="teaser-panel-wrap">
+      <div class="hero-teaser-box">
+        <div class="hero-teaser-inner">
+          <div class="hero-teaser-play">
+            <i class="fas fa-play"></i>
+          </div>
+          <div class="hero-teaser-text">
+            Teaser placeholder — add a strong short demo video here later to immediately show identity-preserving tracking in action.
+          </div>
+        </div>
+      </div>
+
+      <p class="hero-teaser-caption">
+        A visual tracking system designed to preserve identity through occlusions, re-entry, and complex multi-person interactions in social robotics.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- OVERVIEW PANEL -->
+<section class="section section-band full-panel" id="overview">
   <div class="container is-max-desktop">
     <div class="section-card">
       <div class="columns is-centered has-text-centered">
@@ -162,7 +163,8 @@
   </div>
 </section>
 
-<section class="section section-focus" id="method">
+<!-- METHOD PANEL -->
+<section class="section section-focus full-panel" id="method">
   <div class="container is-max-desktop">
     <div class="section-card">
       <div class="columns is-centered has-text-centered">
@@ -194,9 +196,6 @@
             <p>
               When the target is confidently tracked, the system remains in normal tracking mode. In this mode, identity is maintained using recent visual evidence and temporal memory, enabling efficient and stable online tracking during continuous observation.
             </p>
-            <p>
-              This mode is designed for smooth frame-to-frame operation while preserving a consistent representation of each tracked person.
-            </p>
           </div>
         </div>
 
@@ -206,9 +205,6 @@
             <p>
               When confidence drops due to occlusion, disappearance, or ambiguity, the system switches to reacquisition mode. In this stage, candidate detections are evaluated to recover the correct identity before returning to normal tracking.
             </p>
-            <p>
-              This is especially important in crowded scenes, after temporary exits from the field of view, or when multiple similar-looking people interact closely.
-            </p>
           </div>
         </div>
       </div>
@@ -216,7 +212,8 @@
   </div>
 </section>
 
-<section class="section section-band" id="results">
+<!-- RESULTS PANEL -->
+<section class="section section-band full-panel" id="results">
   <div class="container is-max-desktop">
     <div class="results-stage">
       <h2 class="title is-3 has-text-centered" style="margin-bottom: 2rem;">Qualitative results</h2>
@@ -256,7 +253,8 @@
   </div>
 </section>
 
-<section class="section section-focus" id="demo">
+<!-- DEMO PANEL -->
+<section class="section section-focus full-panel" id="demo">
   <div class="container is-max-desktop">
     <div class="section-card">
       <div class="columns is-centered has-text-centered">
@@ -265,9 +263,6 @@
           <div class="inner-card content has-text-justified">
             <p>
               An interactive demo will be added here to allow users to explore selected tracking examples and compare outputs. The long-term goal is to provide a simple interface where users can inspect difficult scenarios and better understand the system’s behavior.
-            </p>
-            <p>
-              This section can later be connected to an external hosted demo, such as a Hugging Face Space, and embedded directly into this webpage.
             </p>
           </div>
 
@@ -282,7 +277,8 @@
   </div>
 </section>
 
-<section class="section section-band" id="resources">
+<!-- RESOURCES PANEL -->
+<section class="section section-band full-panel" id="resources">
   <div class="container is-max-desktop">
     <div class="section-card">
       <div class="columns is-centered">
@@ -334,18 +330,6 @@
     <div class="content has-text-centered">
       <a class="icon-link" href="#"><i class="fas fa-file-pdf"></i></a>
       <a class="icon-link" href="#"><i class="fab fa-github"></i></a>
-    </div>
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-          <p>
-            This website was adapted from the <a href="https://github.com/nerfies/nerfies.github.io">Nerfies project page template</a>.
-          </p>
-          <p>
-            Project page for the master's thesis <i>Robust Multi-Person Re-Identification and Tracking for Social Robotics</i>.
-          </p>
-        </div>
-      </div>
     </div>
   </div>
 </footer>
