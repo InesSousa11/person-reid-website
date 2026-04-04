@@ -8,15 +8,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Robust Multi-Person Re-Identification and Tracking for Social Robotics</title>
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
   <link rel="icon" href="./static/images/favicon.svg">
 
@@ -25,6 +23,7 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+  <script defer src="./static/js/hero-carousel.js"></script>
 </head>
 <body>
 
@@ -39,11 +38,8 @@
   <div class="navbar-menu">
     <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
       <a class="navbar-item" href="#top">
-        <span class="icon">
-          <i class="fas fa-home"></i>
-        </span>
+        <span class="icon"><i class="fas fa-home"></i></span>
       </a>
-
       <a class="navbar-item" href="#overview">Overview</a>
       <a class="navbar-item" href="#method">Method</a>
       <a class="navbar-item" href="#results">Results</a>
@@ -61,58 +57,53 @@
 
         <div class="hero-name">Inês Sousa</div>
 
-        <div class="publication-links">
+        <div class="hero-carousel-wrap">
+          <div class="hero-carousel-viewport">
+            <div class="hero-carousel-track" id="heroCarousel">
+              <div class="hero-carousel-card is-active">
+                <video autoplay muted loop playsinline preload="auto" poster="./static/images/hero_fallback.jpg">
+                  <source src="./static/videos/hero_background_web.mp4" type="video/mp4">
+                  <source src="./static/videos/hero_background.mp4" type="video/mp4">
+                </video>
+              </div>
+
+              <div class="hero-carousel-card">
+                <video autoplay muted loop playsinline preload="auto" poster="./static/images/hero_fallback.jpg">
+                  <source src="./static/videos/comparison1_web.mp4" type="video/mp4">
+                </video>
+              </div>
+
+              <div class="hero-carousel-card">
+                <video autoplay muted loop playsinline preload="auto" poster="./static/images/hero_fallback.jpg">
+                  <source src="./static/videos/comparison2_web.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="publication-links hero-links-bottom">
           <span class="link-block">
             <a href="#" class="external-link button is-normal is-rounded is-dark">
-              <span class="icon">
-                <i class="fas fa-file-pdf"></i>
-              </span>
+              <span class="icon"><i class="fas fa-file-pdf"></i></span>
               <span>Thesis</span>
             </a>
           </span>
 
           <span class="link-block">
             <a href="#" class="external-link button is-normal is-rounded is-dark">
-              <span class="icon">
-                <i class="fab fa-github"></i>
-              </span>
+              <span class="icon"><i class="fab fa-github"></i></span>
               <span>Code</span>
             </a>
           </span>
 
           <span class="link-block">
             <a href="#demo" class="external-link button is-normal is-rounded is-dark">
-              <span class="icon">
-                <i class="fas fa-play-circle"></i>
-              </span>
+              <span class="icon"><i class="fas fa-play-circle"></i></span>
               <span>Demo</span>
             </a>
           </span>
         </div>
-
-        <div class="hero-carousel-wrap">
-          <div class="hero-carousel">
-            <div class="hero-carousel-card">
-              <video autoplay muted loop playsinline preload="auto" poster="./static/images/hero_fallback.jpg">
-                <source src="./static/videos/hero_background_web.mp4" type="video/mp4">
-                <source src="./static/videos/hero_background.mp4" type="video/mp4">
-              </video>
-            </div>
-
-            <div class="hero-carousel-card">
-              <video autoplay muted loop playsinline preload="auto" poster="./static/images/hero_fallback.jpg">
-                <source src="./static/videos/comparison1_web.mp4" type="video/mp4">
-              </video>
-            </div>
-
-            <div class="hero-carousel-card">
-              <video autoplay muted loop playsinline preload="auto" poster="./static/images/hero_fallback.jpg">
-                <source src="./static/videos/comparison2_web.mp4" type="video/mp4">
-              </video>
-            </div>
-          </div>
-        </div>
-
       </div>
     </div>
   </div>
@@ -204,9 +195,7 @@
               <span>Occlusion handling placeholder — add a result clip here later.</span>
             </div>
             <h3 class="title is-4" style="margin-top: 1rem;">Occlusion handling</h3>
-            <p>
-              Example showing recovery of the correct identity after partial or full occlusion.
-            </p>
+            <p>Example showing recovery of the correct identity after partial or full occlusion.</p>
           </div>
         </div>
 
@@ -216,9 +205,7 @@
               <span>Re-entry placeholder — add a result clip here later.</span>
             </div>
             <h3 class="title is-4" style="margin-top: 1rem;">Re-entry and reacquisition</h3>
-            <p>
-              Example showing successful reacquisition after the person temporarily leaves the field of view.
-            </p>
+            <p>Example showing successful reacquisition after the person temporarily leaves the field of view.</p>
           </div>
         </div>
 
@@ -228,9 +215,7 @@
               <span>Multi-person interaction placeholder — add a result clip here later.</span>
             </div>
             <h3 class="title is-4" style="margin-top: 1rem;">Multi-person interaction</h3>
-            <p>
-              Example showing identity preservation during close interaction between similar-looking people.
-            </p>
+            <p>Example showing identity preservation during close interaction between similar-looking people.</p>
           </div>
         </div>
       </div>
@@ -335,9 +320,7 @@
           <h2 class="title is-3">Resources</h2>
 
           <div class="resource-panel content has-text-justified">
-            <p>
-              Useful links related to this project.
-            </p>
+            <p>Useful links related to this project.</p>
           </div>
 
           <div class="columns is-multiline resource-buttons">
@@ -379,12 +362,8 @@
 <footer class="footer">
   <div class="container">
     <div class="content has-text-centered">
-      <a class="icon-link" href="#">
-        <i class="fas fa-file-pdf"></i>
-      </a>
-      <a class="icon-link" href="#">
-        <i class="fab fa-github"></i>
-      </a>
+      <a class="icon-link" href="#"><i class="fas fa-file-pdf"></i></a>
+      <a class="icon-link" href="#"><i class="fab fa-github"></i></a>
     </div>
     <div class="columns is-centered">
       <div class="column is-8">
