@@ -9,6 +9,7 @@
   <title>Robust Multi-Person Re-Identification and Tracking for Social Robotics</title>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
@@ -22,9 +23,33 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
-  <script defer src="./static/js/hero-carousel.js"></script>
 </head>
 <body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="#top">
+        <span class="icon">
+          <i class="fas fa-home"></i>
+        </span>
+      </a>
+      <a class="navbar-item" href="#overview">Overview</a>
+      <a class="navbar-item" href="#method">Method</a>
+      <a class="navbar-item" href="#results">Results</a>
+      <a class="navbar-item" href="#demo">Demo</a>
+      <a class="navbar-item" href="#resources">Resources</a>
+    </div>
+  </div>
+</nav>
 
 <section class="hero" id="top">
   <div class="hero-body">
@@ -37,69 +62,80 @@
 
         <div class="hero-name">Inês Sousa</div>
 
-        <div class="hero-carousel-section">
-          <div class="hero-carousel-wrap">
-            <button class="hero-carousel-arrow hero-carousel-arrow-left" id="heroPrev" aria-label="Previous teaser">
-              <i class="fas fa-chevron-left"></i>
-            </button>
-
-            <div class="hero-carousel-track" id="heroCarousel">
-              <article class="hero-carousel-card">
-                <video autoplay muted loop playsinline preload="auto" poster="./static/images/hero_fallback.jpg">
-                  <source src="./static/videos/hero_background_web.mp4" type="video/mp4">
-                  <source src="./static/videos/hero_background.mp4" type="video/mp4">
-                </video>
-              </article>
-
-              <article class="hero-carousel-card">
-                <video autoplay muted loop playsinline preload="auto" poster="./static/images/hero_fallback.jpg">
-                  <source src="./static/videos/comparison1_web.mp4" type="video/mp4">
-                </video>
-              </article>
-
-              <article class="hero-carousel-card">
-                <video autoplay muted loop playsinline preload="auto" poster="./static/images/hero_fallback.jpg">
-                  <source src="./static/videos/comparison2_web.mp4" type="video/mp4">
-                </video>
-              </article>
-            </div>
-
-            <button class="hero-carousel-arrow hero-carousel-arrow-right" id="heroNext" aria-label="Next teaser">
-              <i class="fas fa-chevron-right"></i>
-            </button>
-          </div>
-
-          <div class="hero-dots" id="heroDots"></div>
+        <div class="hero-meta">
+          Instituto Superior Técnico · ISR Lisboa · SocRob
         </div>
+
+        <p class="hero-subtitle">
+          A real-time identity-preserving person tracking system for social robots, designed to remain robust under occlusions, re-entry, and challenging multi-person interactions.
+        </p>
 
         <div class="publication-links hero-links-bottom">
           <span class="link-block">
-            <a href="#" class="external-link button is-normal is-rounded is-dark">
-              <span class="icon"><i class="fas fa-file-pdf"></i></span>
+            <a href="#"
+               class="external-link button is-normal is-rounded is-dark">
+              <span class="icon">
+                <i class="fas fa-file-pdf"></i>
+              </span>
               <span>Thesis</span>
             </a>
           </span>
 
           <span class="link-block">
-            <a href="#" class="external-link button is-normal is-rounded is-dark">
-              <span class="icon"><i class="fab fa-github"></i></span>
+            <a href="#"
+               class="external-link button is-normal is-rounded is-dark">
+              <span class="icon">
+                <i class="fab fa-github"></i>
+              </span>
               <span>Code</span>
             </a>
           </span>
 
           <span class="link-block">
-            <a href="#demo" class="external-link button is-normal is-rounded is-dark">
-              <span class="icon"><i class="fas fa-play-circle"></i></span>
+            <a href="#demo"
+               class="external-link button is-normal is-rounded is-dark">
+              <span class="icon">
+                <i class="fas fa-play-circle"></i>
+              </span>
               <span>Demo</span>
+            </a>
+          </span>
+
+          <span class="link-block">
+            <a href="#resources"
+               class="external-link button is-normal is-rounded is-dark">
+              <span class="icon">
+                <i class="fas fa-link"></i>
+              </span>
+              <span>Resources</span>
+            </a>
+          </span>
+
+          <span class="link-block">
+            <a href="#"
+               class="external-link button is-normal is-rounded is-dark">
+              <span class="icon">
+                <i class="fas fa-users"></i>
+              </span>
+              <span>Team</span>
             </a>
           </span>
         </div>
 
-        <a href="#overview" class="scroll-cue" aria-label="Scroll to see the project">
-          <span class="scroll-cue-text">Scroll to see the project</span>
-          <span class="scroll-cue-line"></span>
-          <span class="scroll-cue-dot"></span>
-        </a>
+        <div class="hero-teaser-box">
+          <div class="hero-teaser-inner">
+            <div class="hero-teaser-play">
+              <i class="fas fa-play"></i>
+            </div>
+            <div class="hero-teaser-text">
+              Teaser placeholder — add a strong short demo video here later to immediately show identity-preserving tracking in action.
+            </div>
+          </div>
+        </div>
+
+        <p class="hero-teaser-caption">
+          A visual tracking system designed to preserve identity through occlusions, re-entry, and complex multi-person interactions in social robotics.
+        </p>
 
       </div>
     </div>
