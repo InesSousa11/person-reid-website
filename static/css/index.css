@@ -167,7 +167,7 @@ video {
   gap: 0.9rem;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  padding: 0.2rem 0.2rem 0.65rem 0.2rem;
+  padding: 0.35rem 0.2rem 0.75rem 0.2rem;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: thin;
   scrollbar-color: rgba(74, 97, 255, 0.34) transparent;
@@ -188,18 +188,40 @@ video {
 
 .hero-carousel-card {
   flex: 0 0 360px;
-  scroll-snap-align: start;
+  scroll-snap-align: center;
   border-radius: 22px;
   overflow: hidden;
   background: linear-gradient(180deg, rgba(255,255,255,0.96) 0%, rgba(255,255,255,0.90) 100%);
   border: 1px solid rgba(255,255,255,0.76);
   box-shadow: var(--shadow-md);
+  transform: scale(0.965);
+  opacity: 0.72;
+  transition: transform 0.28s ease, opacity 0.28s ease, box-shadow 0.28s ease, filter 0.28s ease;
 }
 
 .hero-carousel-card video {
   width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
+  filter: blur(2.2px) saturate(0.92);
+  transition: filter 0.28s ease;
+}
+
+.hero-carousel-card:hover,
+.hero-carousel-card:focus-within {
+  transform: scale(1);
+  opacity: 1;
+  box-shadow: var(--shadow-lg);
+}
+
+.hero-carousel-card:hover video,
+.hero-carousel-card:focus-within video {
+  filter: blur(0) saturate(1);
+}
+
+/* Optional nicer centered feel on larger screens */
+.hero-carousel {
+  justify-content: flex-start;
 }
 
 /* Sections */
