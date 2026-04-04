@@ -86,8 +86,8 @@ img, video { max-width: 100%; display: block; }
   position: relative;
   z-index: 2;
   width: 100%;
-  padding-top: 3rem;
-  padding-bottom: 2.5rem;
+  padding-top: 3.6rem;
+  padding-bottom: 2.8rem;
 }
 
 .hero-clean {
@@ -98,25 +98,25 @@ img, video { max-width: 100%; display: block; }
 
 .publication-title {
   font-size: 3.55rem;
-  line-height: 1.02;
+  line-height: 1.06;
   font-weight: 800;
   color: var(--text-main);
-  max-width: 1240px;
-  margin: 0 auto 0.55rem auto;
+  max-width: 1280px;
+  margin: 0 auto 1.2rem auto;
   letter-spacing: 0;
 }
 
 .hero-name {
-  font-size: 0.98rem;
+  font-size: 1.02rem;
   font-weight: 700;
   color: var(--primary);
-  margin-bottom: 0.7rem;
+  margin-bottom: 1.2rem;
 }
 
 /* Real scrollable centered carousel */
 .hero-carousel-section {
   margin-top: 0.2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
 }
 
 .hero-carousel-wrap {
@@ -132,10 +132,10 @@ img, video { max-width: 100%; display: block; }
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   padding:
-    0.9rem
-    clamp(80px, calc(50% - 260px), 360px)
-    1.1rem
-    clamp(80px, calc(50% - 260px), 360px);
+    1.35rem
+    clamp(100px, calc(50% - 280px), 380px)
+    1.45rem
+    clamp(100px, calc(50% - 280px), 380px);
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
@@ -145,8 +145,8 @@ img, video { max-width: 100%; display: block; }
 }
 
 .hero-carousel-card {
-  flex: 0 0 520px;
-  width: 520px;
+  flex: 0 0 540px;
+  width: 540px;
   scroll-snap-align: center;
   border-radius: 28px;
   overflow: hidden;
@@ -171,14 +171,14 @@ img, video { max-width: 100%; display: block; }
 
 .hero-carousel-card.is-near {
   opacity: 0.72;
-  filter: blur(1.5px);
+  filter: blur(1.4px);
   transform: scale(0.92);
 }
 
 .hero-carousel-card.is-active {
   opacity: 1;
   filter: blur(0);
-  transform: scale(1.08);
+  transform: scale(1.14);
   box-shadow: var(--shadow-lg);
   z-index: 3;
 }
@@ -216,8 +216,8 @@ img, video { max-width: 100%; display: block; }
   justify-content: center;
   align-items: center;
   gap: 0.55rem;
-  margin-top: 0.15rem;
-  margin-bottom: 0.75rem;
+  margin-top: 0.1rem;
+  margin-bottom: 1rem;
 }
 
 .hero-dot {
@@ -499,17 +499,17 @@ pre {
 
 @media screen and (max-width: 1200px) {
   .publication-title {
-    font-size: 3.1rem;
+    font-size: 3.15rem;
   }
 
   .hero-carousel-track {
-    padding-left: max(40px, calc(50% - 220px));
-    padding-right: max(40px, calc(50% - 220px));
+    padding-left: max(40px, calc(50% - 230px));
+    padding-right: max(40px, calc(50% - 230px));
   }
 
   .hero-carousel-card {
-    flex-basis: 440px;
-    width: 440px;
+    flex-basis: 460px;
+    width: 460px;
   }
 }
 
@@ -519,8 +519,8 @@ pre {
   }
 
   .hero-body {
-    padding-top: 2.6rem;
-    padding-bottom: 2rem;
+    padding-top: 2.8rem;
+    padding-bottom: 2.1rem;
   }
 
   .hero-carousel-arrow {
@@ -540,7 +540,7 @@ pre {
   }
 
   .hero-carousel-card.is-active {
-    transform: scale(1.03);
+    transform: scale(1.04);
   }
 
   .section {
