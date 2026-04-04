@@ -15,15 +15,14 @@
   --primary: #4a61ff;
   --primary-2: #7c63ff;
   --secondary: #24d2ff;
-  --accent: #ff7d5b;
 
   --shadow-sm: 0 10px 24px rgba(35, 52, 122, 0.08);
   --shadow-md: 0 18px 40px rgba(35, 52, 122, 0.12);
-  --shadow-lg: 0 30px 64px rgba(35, 52, 122, 0.16);
+  --shadow-lg: 0 26px 56px rgba(35, 52, 122, 0.14);
 
   --radius-xl: 34px;
-  --radius-lg: 26px;
-  --radius-md: 20px;
+  --radius-lg: 24px;
+  --radius-md: 18px;
 
   --maxw: 1180px;
 }
@@ -36,7 +35,7 @@ body {
   font-family: "Google Sans", "Noto Sans", sans-serif;
   background:
     radial-gradient(circle at top left, rgba(36, 210, 255, 0.12), transparent 20%),
-    radial-gradient(circle at top right, rgba(255, 125, 91, 0.10), transparent 20%),
+    radial-gradient(circle at top right, rgba(74, 97, 255, 0.08), transparent 20%),
     linear-gradient(180deg, #f8fbff 0%, var(--bg-page) 100%);
   color: var(--text-main);
   line-height: 1.72;
@@ -85,7 +84,7 @@ video {
   overflow: hidden;
   background:
     radial-gradient(circle at 16% 24%, rgba(36, 210, 255, 0.12), transparent 22%),
-    radial-gradient(circle at 82% 18%, rgba(255, 125, 91, 0.10), transparent 22%),
+    radial-gradient(circle at 82% 18%, rgba(74, 97, 255, 0.08), transparent 22%),
     linear-gradient(180deg, var(--bg-hero) 0%, #edf3ff 100%);
 }
 
@@ -102,8 +101,8 @@ video {
   position: relative;
   z-index: 2;
   width: 100%;
-  padding-top: 4.8rem;
-  padding-bottom: 4rem;
+  padding-top: 4.2rem;
+  padding-bottom: 2.8rem;
 }
 
 .hero-clean {
@@ -118,25 +117,25 @@ video {
   font-weight: 800;
   color: var(--text-main);
   max-width: 1180px;
-  margin: 0 auto 1.4rem auto;
+  margin: 0 auto 1.05rem auto;
   letter-spacing: 0;
 }
 
 .hero-name {
-  font-size: 1.1rem;
+  font-size: 1.12rem;
   font-weight: 700;
   color: var(--primary);
-  margin-bottom: 1.8rem;
+  margin-bottom: 1.35rem;
 }
 
 .publication-links {
   margin-top: 0;
-  margin-bottom: 2rem;
+  margin-bottom: 1.4rem;
 }
 
 .link-block {
   display: inline-block;
-  margin: 0.35rem;
+  margin: 0.32rem;
 }
 
 .button.is-dark {
@@ -160,22 +159,22 @@ video {
 
 /* HERO CAROUSEL */
 .hero-carousel-wrap {
-  margin-top: 1.2rem;
+  margin-top: 0.4rem;
 }
 
 .hero-carousel {
   display: flex;
-  gap: 1.15rem;
+  gap: 0.9rem;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  padding: 0.25rem 0.25rem 0.9rem 0.25rem;
+  padding: 0.2rem 0.2rem 0.65rem 0.2rem;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: thin;
   scrollbar-color: rgba(74, 97, 255, 0.34) transparent;
 }
 
 .hero-carousel::-webkit-scrollbar {
-  height: 10px;
+  height: 8px;
 }
 
 .hero-carousel::-webkit-scrollbar-track {
@@ -183,23 +182,23 @@ video {
 }
 
 .hero-carousel::-webkit-scrollbar-thumb {
-  background: rgba(74, 97, 255, 0.30);
+  background: rgba(74, 97, 255, 0.28);
   border-radius: 999px;
 }
 
 .hero-carousel-card {
-  flex: 0 0 420px;
+  flex: 0 0 360px;
   scroll-snap-align: start;
-  border-radius: 26px;
+  border-radius: 22px;
   overflow: hidden;
-  background: linear-gradient(180deg, rgba(255,255,255,0.94) 0%, rgba(255,255,255,0.86) 100%);
-  border: 1px solid rgba(255,255,255,0.72);
-  box-shadow: var(--shadow-lg);
+  background: linear-gradient(180deg, rgba(255,255,255,0.96) 0%, rgba(255,255,255,0.90) 100%);
+  border: 1px solid rgba(255,255,255,0.76);
+  box-shadow: var(--shadow-md);
 }
 
 .hero-carousel-card video {
   width: 100%;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
 }
 
@@ -232,7 +231,7 @@ video {
 
 .section-focus {
   background:
-    radial-gradient(circle at 90% 15%, rgba(255, 125, 91, 0.08), transparent 20%),
+    radial-gradient(circle at 90% 15%, rgba(74, 97, 255, 0.07), transparent 20%),
     linear-gradient(180deg, var(--bg-band-c) 0%, var(--bg-band-b) 100%);
 }
 
@@ -383,7 +382,7 @@ video {
 }
 
 .mode-card.accent::after {
-  background: radial-gradient(circle, rgba(255, 125, 91, 0.18), transparent 70%);
+  background: radial-gradient(circle, rgba(74, 97, 255, 0.16), transparent 70%);
 }
 
 .comparison-grid {
@@ -464,7 +463,7 @@ pre {
 }
 
 .footer a:hover {
-  color: #ffd7c8 !important;
+  color: #dff7ff !important;
 }
 
 .icon-link {
@@ -483,7 +482,7 @@ pre {
   }
 
   .hero-carousel-card {
-    flex-basis: 360px;
+    flex-basis: 320px;
   }
 
   .section-card {
@@ -521,7 +520,7 @@ pre {
 
   .hero-body {
     padding-top: 3.4rem;
-    padding-bottom: 3rem;
+    padding-bottom: 2.6rem;
   }
 
   .section {
