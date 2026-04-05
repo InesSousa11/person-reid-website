@@ -12,6 +12,8 @@
   --primary: #6672ff;
   --primary-strong: #5564f4;
   --secondary: #79bdff;
+  --accent-warm: #ffb36b;
+  --accent-lilac: #c890ff;
 
   --shadow-sm: 0 10px 24px rgba(48, 64, 140, 0.08);
   --shadow-md: 0 18px 42px rgba(48, 64, 140, 0.12);
@@ -32,8 +34,8 @@ html {
 body {
   font-family: "Google Sans", "Noto Sans", sans-serif;
   background:
-    radial-gradient(circle at 0% 0%, rgba(92, 188, 255, 0.28), transparent 24%),
-    radial-gradient(circle at 100% 0%, rgba(194, 138, 255, 0.28), transparent 22%),
+    radial-gradient(circle at 0% 0%, rgba(92, 188, 255, 0.22), transparent 24%),
+    radial-gradient(circle at 100% 0%, rgba(194, 138, 255, 0.18), transparent 22%),
     linear-gradient(180deg, #f9fbff 0%, var(--bg-page) 100%);
   color: var(--text-main);
   line-height: 1.72;
@@ -86,9 +88,10 @@ video {
   align-items: center;
   justify-content: center;
   background:
-    radial-gradient(circle at 8% 24%, rgba(87, 188, 255, 0.52), transparent 27%),
-    radial-gradient(circle at 92% 16%, rgba(195, 136, 255, 0.46), transparent 25%),
-    radial-gradient(circle at 50% 82%, rgba(123, 191, 255, 0.16), transparent 30%),
+    radial-gradient(circle at 6% 26%, rgba(89, 189, 255, 0.54), transparent 26%),
+    radial-gradient(circle at 94% 18%, rgba(200, 140, 255, 0.40), transparent 24%),
+    radial-gradient(circle at 84% 62%, rgba(255, 179, 107, 0.30), transparent 20%),
+    radial-gradient(circle at 20% 84%, rgba(133, 196, 255, 0.18), transparent 22%),
     linear-gradient(180deg, #eaf2ff 0%, #e7eefc 100%);
 }
 
@@ -97,7 +100,7 @@ video {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(145, 215, 255, 0.18) 0%, transparent 22%, transparent 78%, rgba(225, 185, 255, 0.18) 100%);
+    linear-gradient(90deg, rgba(145, 215, 255, 0.14) 0%, transparent 24%, transparent 76%, rgba(255, 194, 135, 0.13) 100%);
   pointer-events: none;
 }
 
@@ -105,19 +108,21 @@ video {
   position: relative;
   z-index: 2;
   width: 100%;
-  padding-top: 1.1rem;
-  padding-bottom: 1.4rem;
+  padding-top: 1.2rem;
+  padding-bottom: 1.45rem;
 }
 
 .hero-clean {
   text-align: center;
-  max-width: 1160px;
+  max-width: 1320px;
   margin: 0 auto;
-  min-height: calc(100vh - 56px - 2.5rem);
+  min-height: calc(100vh - 56px - 2.65rem);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding-left: 3.6rem;
+  padding-right: 3.6rem;
 }
 
 .publication-title {
@@ -125,46 +130,46 @@ video {
   line-height: 1.03;
   font-weight: 800;
   color: var(--text-main);
-  max-width: 1120px;
-  margin: 0 auto 1.05rem auto;
+  max-width: 1180px;
+  margin: 0 auto 1.65rem auto;
   letter-spacing: 0;
   text-align: center;
 }
 
 .hero-name {
-  font-size: 1.34rem;
+  font-size: 1.42rem;
   font-weight: 700;
   color: var(--primary);
-  margin-bottom: 0.48rem;
+  margin-bottom: 0.95rem;
   text-align: center;
 }
 
 .hero-meta {
-  font-size: 1rem;
+  font-size: 1.06rem;
   color: var(--text-soft);
-  margin-bottom: 0.08rem;
+  margin-bottom: 0.32rem;
   text-align: center;
 }
 
 .hero-advisers {
-  font-size: 0.98rem;
+  font-size: 1rem;
   color: var(--text-soft);
-  margin-bottom: 1rem;
+  margin-bottom: 1.65rem;
   text-align: center;
 }
 
 .hero-subtitle {
-  max-width: 1280px;
-  margin: 0 auto 1.35rem auto;
-  font-size: 1.05rem;
+  max-width: 1320px;
+  margin: 0 auto 2.15rem auto;
+  font-size: 1.08rem;
   color: var(--text-soft);
-  line-height: 1.65;
+  line-height: 1.72;
   text-align: center;
 }
 
 .hero-links-bottom {
   margin-top: 0;
-  margin-bottom: 1.05rem;
+  margin-bottom: 1.35rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -173,7 +178,7 @@ video {
 
 .link-block {
   display: inline-block;
-  margin: 0.16rem 0.22rem;
+  margin: 0.18rem 0.24rem;
 }
 
 .button.is-dark {
@@ -204,7 +209,7 @@ video {
   gap: 0.24rem;
   text-decoration: none;
   color: rgba(85, 100, 244, 0.48);
-  margin-top: 0;
+  margin-top: 0.05rem;
 }
 
 .scroll-cue:hover {
@@ -537,7 +542,12 @@ pre {
 @media screen and (max-width: 1023px) {
   .publication-title {
     font-size: 2.9rem;
-    max-width: 860px;
+    max-width: 900px;
+  }
+
+  .hero-clean {
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 
   .hero-teaser-inner {
@@ -552,11 +562,12 @@ pre {
   .publication-title {
     font-size: 2.1rem;
     max-width: 100%;
-    margin-bottom: 0.8rem;
+    margin-bottom: 1rem;
   }
 
   .hero-name {
     font-size: 1.08rem;
+    margin-bottom: 0.7rem;
   }
 
   .hero-meta,
@@ -564,14 +575,24 @@ pre {
     font-size: 0.92rem;
   }
 
+  .hero-advisers {
+    margin-bottom: 1.15rem;
+  }
+
   .hero-subtitle {
     font-size: 0.98rem;
-    margin-bottom: 1.2rem;
+    margin-bottom: 1.45rem;
   }
 
   .hero-body {
     padding-top: 2.2rem;
     padding-bottom: 2rem;
+  }
+
+  .hero-clean {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    min-height: auto;
   }
 
   .hero-teaser-box {
