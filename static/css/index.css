@@ -13,7 +13,7 @@
   --primary-2: #7f8cff;
   --secondary: #67d4ff;
   --accent: #ff8c6b;
-  --accent-soft: #ffe4db;
+  --accent-2: #ffb36b;
 
   --shadow-sm: 0 10px 24px rgba(47, 60, 122, 0.06);
   --shadow-md: 0 18px 40px rgba(47, 60, 122, 0.08);
@@ -25,7 +25,7 @@
   --radius-sm: 16px;
 
   --maxw: 1180px;
-  --nav-h: 58px;
+  --nav-h: 54px;
 }
 
 html {
@@ -35,9 +35,8 @@ html {
 body {
   font-family: "Google Sans", "Noto Sans", sans-serif;
   background:
-    radial-gradient(circle at 12% 20%, rgba(103, 212, 255, 0.18), transparent 24%),
-    radial-gradient(circle at 88% 18%, rgba(173, 137, 255, 0.16), transparent 25%),
-    radial-gradient(circle at 82% 74%, rgba(255, 173, 92, 0.10), transparent 20%),
+    radial-gradient(circle at 10% 14%, rgba(103, 212, 255, 0.16), transparent 24%),
+    radial-gradient(circle at 90% 16%, rgba(255, 140, 107, 0.10), transparent 24%),
     linear-gradient(180deg, #f8fbff 0%, #f3f6ff 100%);
   color: var(--text-main);
   line-height: 1.72;
@@ -74,6 +73,8 @@ video {
   font-weight: 700;
   font-size: 0.98rem;
   min-height: var(--nav-h);
+  padding-top: 0.55rem;
+  padding-bottom: 0.55rem;
 }
 
 .navbar-item:hover,
@@ -96,16 +97,17 @@ video {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 16% 24%, rgba(103, 212, 255, 0.18), transparent 24%),
-    radial-gradient(circle at 84% 20%, rgba(173, 137, 255, 0.16), transparent 25%),
-    radial-gradient(circle at 82% 72%, rgba(255, 173, 92, 0.11), transparent 20%);
+    radial-gradient(circle at 14% 26%, rgba(91, 193, 255, 0.26), transparent 26%),
+    radial-gradient(circle at 84% 18%, rgba(177, 129, 255, 0.24), transparent 26%),
+    radial-gradient(circle at 82% 72%, rgba(255, 179, 107, 0.18), transparent 22%),
+    radial-gradient(circle at 48% 88%, rgba(120, 170, 255, 0.12), transparent 22%);
   pointer-events: none;
 }
 
 .hero-main-body {
   width: 100%;
-  padding-top: 1.4rem;
-  padding-bottom: 1.4rem;
+  padding-top: 1.2rem;
+  padding-bottom: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -113,32 +115,76 @@ video {
 
 .hero-main-body .container.is-max-desktop {
   width: 100%;
+  min-height: calc(100vh - var(--nav-h) - 3.2rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.hero-main-content {
+  text-align: center;
+  margin-top: -1.2rem;
 }
 
 .publication-title {
-  font-size: 3.35rem;
+  font-size: 3.5rem;
   line-height: 1.06;
   font-weight: 800;
   color: var(--text-main);
-  max-width: 1040px;
-  margin: 0 auto 1.7rem auto;
-  letter-spacing: -0.035em;
+  max-width: 1100px;
+  margin: 0 auto 1.9rem auto;
+  letter-spacing: -0.04em;
+  text-wrap: balance;
+}
+
+.title-highlight {
+  background: linear-gradient(135deg, #4f79ff 0%, #7f6dff 48%, #ff9e63 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.title-highlight-soft {
+  background: linear-gradient(135deg, #5c8fff 0%, #8a7fff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-meta-stack {
+  margin-bottom: 1.8rem;
 }
 
 .hero-meta-line {
-  font-size: 1.08rem;
   color: var(--text-soft);
-  margin-bottom: 0.4rem;
 }
 
-.hero-meta-line strong {
-  color: var(--primary);
+.hero-author-line {
+  font-size: 1.15rem;
   font-weight: 700;
+  color: #6672ff;
+  margin-bottom: 0.45rem;
+}
+
+.hero-advisors-line {
+  font-size: 1.02rem;
+  color: #6d769d;
+  margin-bottom: 0.45rem;
+}
+
+.hero-institute-line {
+  font-size: 1.04rem;
+  font-family: "Castoro", serif;
+  letter-spacing: 0.02em;
+  color: #5665a8;
 }
 
 .publication-links {
-  margin-top: 1.7rem;
-  margin-bottom: 1rem;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .link-block {
@@ -167,7 +213,6 @@ video {
 
 /* Scroll cue */
 .scroll-cue {
-  margin-top: 0.95rem;
   display: inline-flex;
   flex-direction: column;
   align-items: center;
@@ -178,6 +223,13 @@ video {
 
 .scroll-cue:hover {
   color: rgba(91, 108, 255, 0.78);
+}
+
+.scroll-cue-bottom {
+  position: absolute;
+  left: 50%;
+  bottom: 0.2rem;
+  transform: translateX(-50%);
 }
 
 .scroll-cue-text {
@@ -208,7 +260,7 @@ video {
   }
 }
 
-/* Teaser panel */
+/* Teaser fully below fold */
 .hero.teaser {
   min-height: calc(100vh - var(--nav-h));
   display: flex;
@@ -221,8 +273,8 @@ video {
 
 .hero.teaser .hero-body {
   width: 100%;
-  padding-top: 2.6rem;
-  padding-bottom: 2.6rem;
+  padding-top: 2.8rem;
+  padding-bottom: 2.8rem;
 }
 
 #teaser,
@@ -238,7 +290,21 @@ video {
   text-align: center;
 }
 
-/* Typography */
+/* Sections */
+.section {
+  position: relative;
+  padding: 4.8rem 1.25rem;
+  overflow: visible;
+}
+
+.section:nth-of-type(odd) {
+  background: transparent;
+}
+
+.section:nth-of-type(even) {
+  background: rgba(255, 255, 255, 0.28);
+}
+
 .title.is-3 {
   font-size: 2.5rem;
   line-height: 1.08;
@@ -266,20 +332,6 @@ video {
 }
 
 /* Main cards */
-.section {
-  position: relative;
-  padding: 4.8rem 1.25rem;
-  overflow: visible;
-}
-
-.section:nth-of-type(odd) {
-  background: transparent;
-}
-
-.section:nth-of-type(even) {
-  background: rgba(255, 255, 255, 0.28);
-}
-
 .section-card {
   position: relative;
   z-index: 2;
@@ -516,7 +568,7 @@ pre {
 /* Mobile */
 @media screen and (max-width: 1023px) {
   .publication-title {
-    font-size: 2.65rem;
+    font-size: 2.7rem;
   }
 
   .title.is-3 {
@@ -541,11 +593,11 @@ pre {
 
 @media screen and (max-width: 768px) {
   :root {
-    --nav-h: 54px;
+    --nav-h: 52px;
   }
 
   .publication-title {
-    font-size: 2rem;
+    font-size: 2.08rem;
   }
 
   .title.is-3 {
@@ -557,8 +609,12 @@ pre {
   }
 
   .hero-main-body {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1.6rem;
+  }
+
+  .hero-main-body .container.is-max-desktop {
+    min-height: calc(100vh - var(--nav-h) - 2.6rem);
   }
 
   .section {
@@ -589,5 +645,9 @@ pre {
   .media-placeholder.video::before {
     margin-right: 0;
     margin-bottom: 1rem;
+  }
+
+  .scroll-cue-bottom {
+    bottom: 0;
   }
 }
