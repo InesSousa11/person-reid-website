@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="description"
         content="Project page for a master's thesis on robust multi-person re-identification and identity-preserving tracking for social robotics.">
-  <meta name="keywords" content="Person Re-Identification, Tracking, Social Robotics, SAMURAI, SAM2, Computer Vision, Robotics">
+  <meta name="keywords" content="Person Re-Identification, Tracking, Social Robotics, Computer Vision, Robotics">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Robust Multi-Person Re-Identification and Tracking for Social Robotics</title>
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans:400,500,700,800|Noto+Sans:400,500,700,800|Castoro"
         rel="stylesheet">
 
   <link rel="stylesheet" href="./static/css/bulma.min.css">
@@ -43,7 +43,6 @@
           <i class="fas fa-home"></i>
         </span>
       </a>
-
       <a class="navbar-item" href="#overview">Overview</a>
       <a class="navbar-item" href="#method">Method</a>
       <a class="navbar-item" href="#results">Results</a>
@@ -57,63 +56,51 @@
   <div class="hero-body hero-main-body">
     <div class="container is-max-desktop">
       <div class="hero-main-content">
-        <h1 class="title is-1 publication-title">
-          Robust
-          <span class="title-highlight">Multi-Person Re-Identification</span>
-          and
-          <span class="title-highlight-soft">Tracking</span>
-          for Social Robotics
+
+        <h1 class="publication-title">
+          <span class="title-black">Robust Multi-Person</span>
+          <span class="title-purple">Re-Identification</span><br>
+          <span class="title-black">and</span>
+          <span class="title-purple">Tracking</span>
+          <span class="title-black">for Social Robotics</span>
         </h1>
 
-        <div class="hero-meta-stack">
-          <div class="hero-meta-line hero-author-line">
-            Inês Gomes Crispim de Sousa
-          </div>
-
-          <div class="hero-meta-line hero-advisors-line">
-            Advisors: Pedro Lima and Kevin Alcedo
-          </div>
-
-          <div class="hero-meta-line hero-institute-line">
+        <div class="hero-meta-group">
+          <p class="hero-meta hero-meta-main">
+            Author: <strong>Inês Gomes Crispim de Sousa</strong> |
+            Supervisors: <strong>Pedro Lima</strong> and <strong>Kevin Alcedo</strong>
+          </p>
+          <p class="hero-meta hero-meta-institute">
             Instituto Superior Técnico
-          </div>
+          </p>
         </div>
 
-        <div class="publication-links">
+        <div class="publication-links hero-buttons">
           <span class="link-block">
             <a href="#"
-               class="external-link button is-normal is-rounded is-dark">
-              <span class="icon">
-                <i class="fas fa-file-pdf"></i>
-              </span>
+               class="external-link button hero-btn hero-btn-filled">
               <span>Thesis</span>
             </a>
           </span>
 
           <span class="link-block">
             <a href="#"
-               class="external-link button is-normal is-rounded is-dark">
-              <span class="icon">
-                <i class="fab fa-github"></i>
-              </span>
+               class="external-link button hero-btn hero-btn-filled">
               <span>Code</span>
             </a>
           </span>
 
           <span class="link-block">
             <a href="#demo"
-               class="external-link button is-normal is-rounded is-dark">
-              <span class="icon">
-                <i class="fas fa-play-circle"></i>
-              </span>
+               class="external-link button hero-btn hero-btn-outline">
               <span>Demo</span>
             </a>
           </span>
         </div>
       </div>
 
-      <a href="#teaser-panel" class="scroll-cue scroll-cue-bottom" aria-label="Scroll to explore">
-        <span class="scroll-cue-text">Scroll to explore</span>
+      <a href="#teaser-panel" class="scroll-cue scroll-cue-bottom" aria-label="Explore the project">
+        <span class="scroll-cue-text">Explore the project</span>
         <span class="scroll-cue-chevron"></span>
       </a>
     </div>
@@ -125,12 +112,11 @@
     <div class="hero-body">
       <div class="media-placeholder video">
         <span>
-          Teaser placeholder — this panel will show a single synchronized video combining two views:
-          the robot moving in the environment and, alongside it, the robot’s visual perception output with segmentation masks and person re-identification in action.
+          Teaser placeholder — this panel can later show the combined video of the robot moving in the environment together with the robot's perception view, including masks and person re-identification in action.
         </span>
       </div>
       <p class="teaser-description">
-        This preview is intended to immediately show both the robot’s physical behavior and the internal visual tracking process that supports identity-preserving interaction.
+        This video will provide a direct visual summary of the system in operation from both the external and internal points of view.
       </p>
     </div>
   </div>
@@ -167,10 +153,7 @@
           <h2 class="title is-3">Architecture</h2>
           <div class="inner-card content has-text-justified">
             <p>
-              This thesis adapts a memory-based visual tracking architecture into a real-time multi-person re-identification and tracking system for social robotics. The objective is not only to segment and track people frame by frame, but also to preserve identity consistently across interruptions, occlusions, close interactions, and reappearance events.
-            </p>
-            <p>
-              The resulting system combines visual tracking, memory, and identity-aware reasoning to reduce identity switches and improve robustness in realistic robotic scenarios.
+              This section will present the architecture of the model and explain how the proposed system extends the baseline tracking pipeline with identity-preserving mechanisms for social robotics.
             </p>
           </div>
 
@@ -193,7 +176,7 @@
           <h2 class="title is-3">SAMURAI vs proposed model</h2>
           <div class="inner-card content has-text-justified">
             <p>
-              This section is intended to compare the baseline SAMURAI behavior with the proposed identity-preserving extension. The goal is to make the differences clear both conceptually and visually, especially in cases where the baseline becomes unstable after ambiguity, occlusion, or re-entry.
+              This section is intended to compare the baseline SAMURAI behavior with the proposed identity-preserving extension, highlighting how the system responds in challenging situations such as occlusion, disappearance, and re-entry.
             </p>
           </div>
 
@@ -202,7 +185,7 @@
               <div class="comparison-card content">
                 <h3 class="title is-4">Baseline SAMURAI</h3>
                 <div class="media-placeholder video small">
-                  <span>Baseline comparison placeholder — add a representative clip here later.</span>
+                  <span>Baseline comparison placeholder.</span>
                 </div>
               </div>
             </div>
@@ -211,7 +194,7 @@
               <div class="comparison-card content">
                 <h3 class="title is-4">Proposed model</h3>
                 <div class="media-placeholder video small">
-                  <span>Proposed-model comparison placeholder — add your result clip here later.</span>
+                  <span>Proposed-model comparison placeholder.</span>
                 </div>
               </div>
             </div>
@@ -235,9 +218,7 @@
               <span>Occlusion example placeholder.</span>
             </div>
             <h3 class="title is-4" style="margin-top: 1rem;">Occlusion handling</h3>
-            <p>
-              Recovery of the correct identity after partial or full occlusion.
-            </p>
+            <p>Recovery of the correct identity after partial or full occlusion.</p>
           </div>
         </div>
 
@@ -247,9 +228,7 @@
               <span>Re-entry example placeholder.</span>
             </div>
             <h3 class="title is-4" style="margin-top: 1rem;">Re-entry and reacquisition</h3>
-            <p>
-              Successful reacquisition after the person temporarily leaves the field of view.
-            </p>
+            <p>Successful reacquisition after the person temporarily leaves the field of view.</p>
           </div>
         </div>
 
@@ -259,9 +238,7 @@
               <span>Multi-person example placeholder.</span>
             </div>
             <h3 class="title is-4" style="margin-top: 1rem;">Multi-person interaction</h3>
-            <p>
-              Identity preservation during close interaction between similar-looking people.
-            </p>
+            <p>Identity preservation during close interaction between similar-looking people.</p>
           </div>
         </div>
       </div>
@@ -278,7 +255,7 @@
           <h2 class="title is-3">Results</h2>
           <div class="inner-card content has-text-justified">
             <p>
-              Quantitative evaluation complements the qualitative analysis by measuring how well the system preserves identity under challenging conditions. This section can include metrics such as identity switches, reacquisition success, tracking consistency, or any other evaluation criteria most relevant to the thesis experiments.
+              Quantitative evaluation complements the qualitative analysis by measuring how well the system preserves identity under challenging conditions.
             </p>
           </div>
 
