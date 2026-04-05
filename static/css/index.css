@@ -146,6 +146,49 @@ video {
   padding-right: 1.35rem;
 }
 
+/* Scroll cue */
+.scroll-cue {
+  margin-top: 1.6rem;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  text-decoration: none;
+  color: rgba(91, 108, 255, 0.62);
+}
+
+.scroll-cue:hover {
+  color: rgba(91, 108, 255, 0.9);
+}
+
+.scroll-cue-text {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.scroll-cue-chevron {
+  width: 14px;
+  height: 14px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+  opacity: 0.75;
+  animation: scrollChevronFloat 1.8s ease-in-out infinite;
+}
+
+@keyframes scrollChevronFloat {
+  0%, 100% {
+    transform: rotate(45deg) translate(0, 0);
+    opacity: 0.45;
+  }
+  50% {
+    transform: rotate(45deg) translate(4px, 4px);
+    opacity: 0.95;
+  }
+}
+
 /* Sections */
 .section {
   position: relative;
