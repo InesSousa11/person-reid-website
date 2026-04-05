@@ -1,6 +1,6 @@
 :root {
-  --bg-page: #edf3fb;
-  --bg-hero: #e9f1fc;
+  --bg-page: #eef4ff;
+  --bg-hero: #eaf1ff;
   --bg-band-a: #edf3ff;
   --bg-band-b: #f8fbff;
   --bg-band-c: #f0f5fd;
@@ -32,8 +32,8 @@ html {
 body {
   font-family: "Google Sans", "Noto Sans", sans-serif;
   background:
-    radial-gradient(circle at 0% 0%, rgba(92, 190, 255, 0.24), transparent 24%),
-    radial-gradient(circle at 100% 0%, rgba(194, 138, 255, 0.24), transparent 22%),
+    radial-gradient(circle at 0% 0%, rgba(92, 188, 255, 0.28), transparent 24%),
+    radial-gradient(circle at 100% 0%, rgba(194, 138, 255, 0.28), transparent 22%),
     linear-gradient(180deg, #f9fbff 0%, var(--bg-page) 100%);
   color: var(--text-main);
   line-height: 1.72;
@@ -86,10 +86,10 @@ video {
   align-items: center;
   justify-content: center;
   background:
-    radial-gradient(circle at 8% 24%, rgba(92, 188, 255, 0.44), transparent 25%),
-    radial-gradient(circle at 92% 16%, rgba(191, 139, 255, 0.40), transparent 23%),
-    radial-gradient(circle at 50% 78%, rgba(121, 189, 255, 0.14), transparent 28%),
-    linear-gradient(180deg, #eaf2fc 0%, #e7eef9 100%);
+    radial-gradient(circle at 8% 24%, rgba(87, 188, 255, 0.52), transparent 27%),
+    radial-gradient(circle at 92% 16%, rgba(195, 136, 255, 0.46), transparent 25%),
+    radial-gradient(circle at 50% 82%, rgba(123, 191, 255, 0.16), transparent 30%),
+    linear-gradient(180deg, #eaf2ff 0%, #e7eefc 100%);
 }
 
 .hero#top::before {
@@ -97,7 +97,7 @@ video {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(140, 210, 255, 0.16) 0%, transparent 22%, transparent 78%, rgba(220, 180, 255, 0.16) 100%);
+    linear-gradient(90deg, rgba(145, 215, 255, 0.18) 0%, transparent 22%, transparent 78%, rgba(225, 185, 255, 0.18) 100%);
   pointer-events: none;
 }
 
@@ -105,17 +105,19 @@ video {
   position: relative;
   z-index: 2;
   width: 100%;
-  padding-top: 2.4rem;
-  padding-bottom: 2.8rem;
+  padding-top: 1.1rem;
+  padding-bottom: 1.4rem;
 }
 
 .hero-clean {
   text-align: center;
   max-width: 1160px;
   margin: 0 auto;
+  min-height: calc(100vh - 56px - 2.5rem);
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .publication-title {
@@ -124,7 +126,7 @@ video {
   font-weight: 800;
   color: var(--text-main);
   max-width: 1120px;
-  margin: 0 auto 1.35rem auto;
+  margin: 0 auto 1.05rem auto;
   letter-spacing: 0;
   text-align: center;
 }
@@ -133,36 +135,36 @@ video {
   font-size: 1.34rem;
   font-weight: 700;
   color: var(--primary);
-  margin-bottom: 0.65rem;
+  margin-bottom: 0.48rem;
   text-align: center;
 }
 
 .hero-meta {
   font-size: 1rem;
   color: var(--text-soft);
-  margin-bottom: 0.18rem;
+  margin-bottom: 0.08rem;
   text-align: center;
 }
 
 .hero-advisers {
   font-size: 0.98rem;
   color: var(--text-soft);
-  margin-bottom: 1.35rem;
+  margin-bottom: 1rem;
   text-align: center;
 }
 
 .hero-subtitle {
   max-width: 1280px;
-  margin: 0 auto 1.8rem auto;
+  margin: 0 auto 1.35rem auto;
   font-size: 1.05rem;
   color: var(--text-soft);
-  line-height: 1.7;
+  line-height: 1.65;
   text-align: center;
 }
 
 .hero-links-bottom {
   margin-top: 0;
-  margin-bottom: 1.85rem;
+  margin-bottom: 1.05rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -199,22 +201,22 @@ video {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.26rem;
+  gap: 0.24rem;
   text-decoration: none;
-  color: rgba(85, 100, 244, 0.52);
-  margin-top: 0.1rem;
+  color: rgba(85, 100, 244, 0.48);
+  margin-top: 0;
 }
 
 .scroll-cue:hover {
-  color: rgba(85, 100, 244, 0.72);
+  color: rgba(85, 100, 244, 0.68);
 }
 
 .scroll-cue-text {
-  font-size: 0.68rem;
+  font-size: 0.66rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  opacity: 0.78;
+  opacity: 0.76;
 }
 
 .scroll-cue-chevron {
@@ -224,7 +226,7 @@ video {
   border-bottom: 2px solid currentColor;
   transform: rotate(45deg);
   animation: scrollChevron 1.8s ease-in-out infinite;
-  opacity: 0.7;
+  opacity: 0.68;
 }
 
 @keyframes scrollChevron {
