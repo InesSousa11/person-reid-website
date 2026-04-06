@@ -304,7 +304,6 @@ video {
   font-weight: 400;
   color: var(--purple-main);
   text-transform: uppercase;
-  letter-spacing: 0.08em;
 }
 
 .scroll-cue-chevron {
@@ -331,7 +330,7 @@ video {
 .hero-wave {
   position: absolute;
   left: 0;
-  bottom: -6px;
+  bottom: -6.5px;
   width: 100%;
   line-height: 0;
   z-index: 2;
