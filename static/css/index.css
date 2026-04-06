@@ -160,6 +160,7 @@ video {
   font-weight: 500;
 }
 
+/* BUTTONS — corrected to match the older thinner style */
 .hero-buttons {
   margin-top: 0;
   margin-bottom: 0;
@@ -171,25 +172,25 @@ video {
 }
 
 .hero-btn {
-  min-width: 132px;
-  height: 54px;
+  min-width: 118px;
+  height: 42px;
   border-radius: 999px !important;
-  padding-left: 1.3rem;
-  padding-right: 1.3rem;
-  font-size: 0.94rem;
+  font-size: 0.78rem;
   font-weight: 700;
+  padding-left: 1rem;
+  padding-right: 1rem;
   line-height: 1;
+  box-shadow: 0 10px 20px rgba(173, 133, 219, 0.14) !important;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.58rem;
-  box-shadow: 0 10px 20px rgba(173, 133, 219, 0.14) !important;
+  gap: 0.42rem;
   transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease, background 0.18s ease, border-color 0.18s ease;
 }
 
 .hero-btn .icon {
   margin-right: 0 !important;
-  font-size: 1rem;
+  font-size: 0.88rem;
 }
 
 .hero-btn-filled {
@@ -511,16 +512,16 @@ pre {
   }
 
   .hero-btn {
-    min-width: 112px;
-    height: 46px;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    font-size: 0.82rem;
-    gap: 0.42rem;
+    min-width: 104px;
+    height: 40px;
+    padding-left: 0.9rem;
+    padding-right: 0.9rem;
+    font-size: 0.76rem;
+    gap: 0.34rem;
   }
 
   .hero-btn .icon {
-    font-size: 0.88rem;
+    font-size: 0.8rem;
   }
 
   .hero-main-body {
