@@ -330,7 +330,7 @@ video {
 .hero-wave {
   position: absolute;
   left: 0;
-  bottom: -6.5px;
+  bottom: -7px;
   width: 100%;
   line-height: 0;
   z-index: 2;
@@ -583,10 +583,10 @@ pre {
   }
 
   .scroll-cue-chevron {
-    width: 14px;
-    height: 14px;
-    border-right-width: 4px;
-    border-bottom-width: 4px;
+    width: 16px;
+    height: 16px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
   }
 
   .section {
