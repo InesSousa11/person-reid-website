@@ -307,10 +307,10 @@ video {
 }
 
 .scroll-cue-chevron {
-  width: 16px;
-  height: 16px;
-  border-right: 5px solid currentColor;
-  border-bottom: 5px solid currentColor;
+  width: 20px;
+  height: 20px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
   transform: rotate(45deg);
   animation: scroll-bounce 1.5s ease-in-out infinite;
 }
