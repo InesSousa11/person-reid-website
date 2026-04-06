@@ -193,7 +193,7 @@ video {
 }
 
 .hero-meta-main {
-  font-size: 0.89rem;
+  font-size: 0.93rem;
   color: #202020;
   font-weight: 400;
   margin-bottom: 0.42rem;
@@ -204,7 +204,7 @@ video {
 }
 
 .hero-meta-institute {
-  font-size: 0.88rem;
+  font-size: 0.93rem;
   color: #111111;
   font-weight: 400;
 }
@@ -294,13 +294,13 @@ video {
 .scroll-cue-bottom {
   position: absolute;
   left: 50%;
-  bottom: 1.45rem;
+  bottom: 1.80rem;
   transform: translateX(-50%);
   z-index: 3;
 }
 
 .scroll-cue-text {
-  font-size: 0.8rem;
+  font-size: 0.93rem;
   font-weight: 400;
   color: var(--purple-main);
 }
