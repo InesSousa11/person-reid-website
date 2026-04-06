@@ -377,10 +377,18 @@ video {
   background: #ffffff;
 }
 
+.hero.teaser .container.is-max-desktop {
+  width: 100%;
+  max-width: 1400px !important;
+}
+
 .hero.teaser .hero-body {
   width: 100%;
-  padding-top: 0;
-  padding-bottom: 0;
+  min-height: calc(100vh - var(--nav-h));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
 }
 
 .teaser-video-wrap {
@@ -392,8 +400,9 @@ video {
 
 .teaser-video {
   display: block;
-  width: 100%;
-  max-width: 1300px;
+  width: min(92vw, 1280px);
+  height: auto;
+  max-height: 82vh;
   margin: 0 auto;
   border-radius: var(--radius-card);
   box-shadow: var(--shadow-md);
@@ -597,6 +606,7 @@ pre {
   }
 
   .teaser-video {
+    width: 100%;
     max-height: none;
     border-radius: 20px;
   }
