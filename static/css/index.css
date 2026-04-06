@@ -164,7 +164,7 @@ video {
   font-weight: 700;
   letter-spacing: 0em;
   line-height: 0.955;
-  font-size: clamp(3.1rem, 4.5vw, 4.38rem);
+  font-size: clamp(3rem, 4.3vw, 4.15rem);
 }
 
 .publication-title .line {
@@ -193,7 +193,7 @@ video {
 }
 
 .hero-meta-main {
-  font-size: 1.13rem;
+  font-size: 1.14rem;
   color: #202020;
   font-weight: 400;
   margin-bottom: 0.42rem;
@@ -204,7 +204,7 @@ video {
 }
 
 .hero-meta-institute {
-  font-size: 1.13rem;
+  font-size: 1.14rem;
   color: #111111;
   font-weight: 400;
 }
@@ -300,7 +300,7 @@ video {
 }
 
 .scroll-cue-text {
-  font-size: 1.15rem;
+  font-size: 1.14rem;
   font-weight: 400;
   color: var(--purple-main);
 }
