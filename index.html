@@ -26,25 +26,14 @@
 <body>
 
 <nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-  <div class="navbar-menu">
+  <div class="navbar-menu is-active">
     <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href="#top">
-        <span class="icon">
-          <i class="fas fa-home"></i>
-        </span>
-      </a>
-      <a class="navbar-item" href="#overview">Overview</a>
+      <a class="navbar-item active-link" href="#top">Home</a>
+      <a class="navbar-item" href="#teaser-panel">Teaser</a>
+      <a class="navbar-item" href="#overview">Abstract</a>
       <a class="navbar-item" href="#method">Method</a>
       <a class="navbar-item" href="#results">Results</a>
       <a class="navbar-item" href="#demo">Demo</a>
-      <a class="navbar-item" href="#resources">Resources</a>
     </div>
   </div>
 </nav>
@@ -75,7 +64,7 @@
         <div class="publication-links hero-buttons">
           <span class="link-block">
             <a href="#"
-              class="external-link button hero-btn hero-btn-filled">
+               class="external-link button hero-btn hero-btn-filled">
               <span class="icon">
                 <i class="fas fa-file-pdf"></i>
               </span>
@@ -85,7 +74,7 @@
 
           <span class="link-block">
             <a href="#"
-              class="external-link button hero-btn hero-btn-filled">
+               class="external-link button hero-btn hero-btn-filled">
               <span class="icon">
                 <i class="fab fa-github"></i>
               </span>
@@ -95,7 +84,7 @@
 
           <span class="link-block">
             <a href="#demo"
-              class="external-link button hero-btn hero-btn-outline">
+               class="external-link button hero-btn hero-btn-outline">
               <span class="icon">
                 <i class="fas fa-play-circle"></i>
               </span>
@@ -253,29 +242,6 @@
   </div>
 </section>
 
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="section-card">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-10">
-          <h2 class="title is-3">Results</h2>
-          <div class="inner-card content has-text-justified">
-            <p>
-              Quantitative evaluation complements the qualitative analysis by measuring how well the system preserves identity under challenging conditions.
-            </p>
-          </div>
-
-          <div style="margin-top: 1.6rem;">
-            <div class="media-placeholder">
-              <span>Quantitative results placeholder — add charts, tables, or summary figures here later.</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="section" id="demo">
   <div class="container is-max-desktop">
     <div class="section-card">
@@ -293,40 +259,6 @@
               Demo placeholder — add an embedded interactive demo or an external link here later.
             </p>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="resources">
-  <div class="container is-max-desktop">
-    <div class="section-card">
-      <div class="columns is-centered">
-        <div class="column is-12">
-          <h2 class="title is-3">Resources</h2>
-
-          <div class="resource-panel content has-text-justified">
-            <p>
-              Useful links related to this project.
-            </p>
-          </div>
-
-          <div class="columns is-multiline resource-buttons">
-            <div class="column is-half">
-              <a href="#" class="button is-fullwidth is-dark is-rounded">Thesis PDF</a>
-            </div>
-            <div class="column is-half">
-              <a href="#" class="button is-fullwidth is-dark is-rounded">Code Repository</a>
-            </div>
-            <div class="column is-half">
-              <a href="#" class="button is-fullwidth is-dark is-rounded">Project Demo</a>
-            </div>
-            <div class="column is-half">
-              <a href="#" class="button is-fullwidth is-dark is-rounded">Additional Material</a>
-            </div>
-          </div>
-
         </div>
       </div>
     </div>
