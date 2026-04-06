@@ -115,6 +115,28 @@ video {
   border-radius: 999px;
 }
 
+.nav-home-icon {
+  padding-left: 0.7rem;
+  padding-right: 0.7rem;
+}
+
+.nav-home-icon .icon {
+  margin: 0 !important;
+  font-size: 1rem;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-home-icon i {
+  color: #222;
+}
+
+.nav-home-icon:hover i {
+  color: var(--purple-main);
+}
+
 /* HERO */
 .hero#top {
   position: relative;
