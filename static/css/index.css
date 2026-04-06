@@ -294,7 +294,7 @@ video {
 .scroll-cue-bottom {
   position: absolute;
   left: 50%;
-  bottom: 2.2rem;
+  bottom: 2.5rem;
   transform: translateX(-50%);
   z-index: 3;
 }
