@@ -370,7 +370,7 @@ video {
 
 /* TEASER */
 .hero.teaser {
-  min-height: calc(100vh - var(--nav-h));
+  min-height: 78vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -379,12 +379,12 @@ video {
 
 .hero.teaser .container.is-max-desktop {
   width: 100%;
-  max-width: 1400px !important;
+  max-width: 1240px !important;
 }
 
 .hero.teaser .hero-body {
   width: 100%;
-  min-height: calc(100vh - var(--nav-h));
+  min-height: 78vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -400,9 +400,9 @@ video {
 
 .teaser-video {
   display: block;
-  width: min(92vw, 1280px);
+  width: min(86vw, 1120px);
+  max-height: 68vh;
   height: auto;
-  max-height: 82vh;
   margin: 0 auto;
   border-radius: var(--radius-card);
   box-shadow: var(--shadow-md);
